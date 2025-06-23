@@ -12,10 +12,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">TDB</span>
-              </div>
-              <span className="font-bold text-xl">The Drawing Board</span>
+              <img 
+                src="/lovable-uploads/15f117bd-d591-46f8-8b69-e482c3a64b47.png" 
+                alt="TDB Logo" 
+                className="w-8 h-8"
+              />
+              <span className="font-satoshi font-bold text-xl">TheDrawingBoard</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               We help small businesses get 7 paying customers a month. Or you don't pay.
@@ -92,7 +94,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2024 The Drawing Board. All rights reserved.</p>
+          <p>&copy; 2025 TheDrawingBoard. All rights reserved.</p>
         </div>
       </div>
     </footer>
