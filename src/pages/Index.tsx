@@ -47,19 +47,19 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-satoshi font-bold text-gray-900 mb-6 leading-tight">
                 Struggling to Get{' '}
                 <span className="text-primary">Clients?</span>
               </h1>
               <p className="text-xl lg:text-2xl text-gray-600 mb-8 font-medium">
                 We help small businesses get{' '}
-                <span className="text-primary font-bold">7 paying customers</span>{' '}
+                <span className="text-primary font-satoshi font-bold">7 paying customers</span>{' '}
                 a month. Or you don't pay.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-white font-satoshi font-semibold px-8 py-4 text-lg"
                   asChild
                 >
                   <a href="#pricing">Start With This Plan</a>
@@ -67,7 +67,7 @@ const Index = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4 text-lg"
+                  className="border-primary text-primary hover:bg-primary hover:text-white font-satoshi font-semibold px-8 py-4 text-lg"
                   asChild
                 >
                   <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer">
@@ -79,21 +79,21 @@ const Index = () => {
             
             <div className="lg:text-right">
               <div className="bg-white p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-satoshi font-bold text-gray-900 mb-4">
                   From Overlooked to Overbooked
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Average Client Results:</span>
-                    <span className="font-bold text-primary">+284% Growth</span>
+                    <span className="font-satoshi font-bold text-primary">+284% Growth</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Success Rate:</span>
-                    <span className="font-bold text-primary">97%</span>
+                    <span className="font-satoshi font-bold text-primary">97%</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Money-Back Guarantee:</span>
-                    <span className="font-bold text-green-600">100%</span>
+                    <span className="font-satoshi font-bold text-green-600">100%</span>
                   </div>
                 </div>
               </div>
@@ -106,7 +106,7 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-satoshi font-bold text-gray-900 mb-4">
               We Bring Brands Back From The Dead
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -120,7 +120,7 @@ const Index = () => {
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="text-4xl mb-4">{service.icon}</div>
-                  <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
+                  <CardTitle className="text-xl font-satoshi text-primary">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">{service.description}</p>
@@ -135,7 +135,7 @@ const Index = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-satoshi font-bold text-gray-900 mb-4">
               Who This Is For
             </h2>
             <p className="text-xl text-gray-600">
@@ -148,7 +148,7 @@ const Index = () => {
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
                   <div className="text-4xl mb-4">{audience.icon}</div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{audience.title}</h3>
+                  <h3 className="font-satoshi font-semibold text-gray-900 mb-2">{audience.title}</h3>
                   <p className="text-sm text-gray-600">{audience.description}</p>
                 </CardContent>
               </Card>
@@ -165,7 +165,7 @@ const Index = () => {
       {/* Newsletter Signup */}
       <section className="py-20 bg-primary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-3xl lg:text-4xl font-satoshi font-bold mb-4">
             Want to grow your brand and get 7 customers every month?
           </h2>
           <p className="text-xl mb-8 text-gray-200">
@@ -180,7 +180,7 @@ const Index = () => {
             />
             <Button 
               size="lg"
-              className="bg-accent text-primary hover:bg-accent/90 font-semibold px-8"
+              className="bg-accent text-primary hover:bg-accent/90 font-satoshi font-semibold px-8"
             >
               Get Growth Emails
             </Button>

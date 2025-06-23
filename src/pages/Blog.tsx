@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -78,7 +77,7 @@ const Blog = () => {
       <section className="py-20 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+            <h1 className="text-4xl lg:text-6xl font-satoshi font-bold mb-4">
               The Business Blueprint by TDB
             </h1>
             <p className="text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto">
@@ -96,7 +95,7 @@ const Blog = () => {
                 className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 flex-1"
               />
               <Button 
-                className="bg-accent text-primary hover:bg-accent/90 font-semibold px-6"
+                className="bg-accent text-primary hover:bg-accent/90 font-satoshi font-semibold px-6"
               >
                 Subscribe
               </Button>
@@ -118,7 +117,7 @@ const Blog = () => {
                 variant={selectedCategory === category ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category)}
-                className={selectedCategory === category ? "bg-primary text-white" : ""}
+                className={selectedCategory === category ? "bg-primary text-white font-satoshi font-semibold" : "font-satoshi"}
               >
                 {category}
               </Button>
@@ -133,7 +132,7 @@ const Blog = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
               <Badge className="bg-accent text-primary mb-4">Featured</Badge>
-              <h2 className="text-2xl font-bold text-gray-900">Latest Blueprint</h2>
+              <h2 className="text-2xl font-satoshi font-bold text-gray-900">Latest Blueprint</h2>
             </div>
             
             <Card className="overflow-hidden hover:shadow-xl transition-shadow">
@@ -147,7 +146,7 @@ const Blog = () => {
                 </div>
                 <div className="p-8 flex flex-col justify-center">
                   <Badge className="w-fit mb-4">{featuredPost.category}</Badge>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl lg:text-3xl font-satoshi font-bold text-gray-900 mb-4">
                     {featuredPost.title}
                   </h3>
                   <p className="text-gray-600 mb-6 text-lg">
@@ -155,7 +154,7 @@ const Blog = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{featuredPost.readTime}</span>
-                    <Button className="bg-primary hover:bg-primary/90">
+                    <Button className="bg-primary hover:bg-primary/90 font-satoshi font-semibold">
                       Read Blueprint
                     </Button>
                   </div>
@@ -184,7 +183,7 @@ const Blog = () => {
                     <Badge variant="secondary">{post.category}</Badge>
                     <span className="text-xs text-gray-500">{post.readTime}</span>
                   </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                  <CardTitle className="text-xl font-satoshi group-hover:text-primary transition-colors">
                     {post.title}
                   </CardTitle>
                 </CardHeader>
@@ -195,16 +194,16 @@ const Blog = () => {
                   
                   {/* Soft pitch */}
                   <div className="bg-accent/20 p-3 rounded-lg mb-4">
-                    <p className="text-sm text-primary font-medium">
+                    <p className="text-sm text-primary font-satoshi font-medium">
                       Want 7 new clients this month? We do it for you.
                     </p>
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" className="font-satoshi">
                       Read More
                     </Button>
-                    <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
+                    <Button size="sm" className="bg-primary hover:bg-primary/90 font-satoshi font-semibold" asChild>
                       <a href="#pricing">Start With This Plan</a>
                     </Button>
                   </div>

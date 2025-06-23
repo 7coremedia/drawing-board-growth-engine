@@ -15,7 +15,7 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl lg:text-6xl font-satoshi font-bold text-gray-900 mb-6">
             Let's Talk Growth
           </h1>
           <p className="text-xl lg:text-2xl text-gray-600">
@@ -33,11 +33,11 @@ const Contact = () => {
             <div className="lg:col-span-1 space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-xl text-primary">Get In Touch</CardTitle>
+                  <CardTitle className="text-xl font-satoshi text-primary">Get In Touch</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2">Email Us</h4>
+                    <h4 className="font-satoshi font-semibold mb-2">Email Us</h4>
                     <a 
                       href="mailto:thedrawingboad.news@gmail.com"
                       className="text-gray-600 hover:text-primary transition-colors"
@@ -47,11 +47,11 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold mb-2">Quick Response</h4>
+                    <h4 className="font-satoshi font-semibold mb-2">Quick Response</h4>
                     <Button 
                       asChild
                       size="sm"
-                      className="bg-green-600 hover:bg-green-700 text-white"
+                      className="bg-green-600 hover:bg-green-700 text-white font-satoshi font-semibold"
                     >
                       <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer">
                         Chat with TDB on WhatsApp
@@ -60,7 +60,7 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold mb-2">Response Time</h4>
+                    <h4 className="font-satoshi font-semibold mb-2">Response Time</h4>
                     <p className="text-gray-600 text-sm">
                       We typically respond within 2-4 hours during business hours
                     </p>
@@ -70,12 +70,12 @@ const Contact = () => {
 
               <Card className="bg-accent/20">
                 <CardContent className="pt-6">
-                  <h4 className="font-semibold text-primary mb-3">Need Immediate Help?</h4>
+                  <h4 className="font-satoshi font-semibold text-primary mb-3">Need Immediate Help?</h4>
                   <p className="text-sm text-gray-600 mb-4">
                     Book a free 15-minute strategy call to discuss your business goals 
                     and see if we're a good fit.
                   </p>
-                  <Button size="sm" variant="outline" className="w-full">
+                  <Button size="sm" variant="outline" className="w-full font-satoshi font-semibold">
                     Book Free Strategy Call
                   </Button>
                 </CardContent>
@@ -86,7 +86,7 @@ const Contact = () => {
             <div className="lg:col-span-2">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900">
+                  <CardTitle className="text-2xl font-satoshi text-gray-900">
                     Tell us about your business
                   </CardTitle>
                   <p className="text-gray-600">
@@ -97,13 +97,13 @@ const Contact = () => {
                   <form className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="firstName" className="block text-sm font-satoshi font-medium text-gray-700 mb-2">
                           First Name *
                         </label>
                         <Input id="firstName" type="text" required />
                       </div>
                       <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="lastName" className="block text-sm font-satoshi font-medium text-gray-700 mb-2">
                           Last Name *
                         </label>
                         <Input id="lastName" type="text" required />
@@ -111,35 +111,35 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-satoshi font-medium text-gray-700 mb-2">
                         Email Address *
                       </label>
                       <Input id="email" type="email" required />
                     </div>
 
                     <div>
-                      <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="business" className="block text-sm font-satoshi font-medium text-gray-700 mb-2">
                         Business Name *
                       </label>
                       <Input id="business" type="text" required />
                     </div>
 
                     <div>
-                      <label htmlFor="industry" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="industry" className="block text-sm font-satoshi font-medium text-gray-700 mb-2">
                         Industry/Business Type *
                       </label>
                       <Input id="industry" type="text" placeholder="e.g., Fashion, Fitness, Coaching, etc." required />
                     </div>
 
                     <div>
-                      <label htmlFor="revenue" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="revenue" className="block text-sm font-satoshi font-medium text-gray-700 mb-2">
                         Current Monthly Revenue (approximately)
                       </label>
                       <Input id="revenue" type="text" placeholder="e.g., ₦100,000 - ₦500,000" />
                     </div>
 
                     <div>
-                      <label htmlFor="challenge" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="challenge" className="block text-sm font-satoshi font-medium text-gray-700 mb-2">
                         What's your biggest customer acquisition challenge? *
                       </label>
                       <Textarea 
@@ -151,7 +151,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="goals" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="goals" className="block text-sm font-satoshi font-medium text-gray-700 mb-2">
                         What would getting 7 new customers monthly mean for your business?
                       </label>
                       <Textarea 
@@ -162,7 +162,7 @@ const Contact = () => {
                     </div>
 
                     <div className="bg-accent/20 p-4 rounded-lg">
-                      <p className="text-sm text-primary font-medium mb-2">
+                      <p className="text-sm text-primary font-satoshi font-medium mb-2">
                         🎯 Ready to guarantee 7 new customers this month?
                       </p>
                       <p className="text-sm text-gray-600">
@@ -174,7 +174,7 @@ const Contact = () => {
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full bg-primary hover:bg-primary/90 text-white font-semibold"
+                      className="w-full bg-primary hover:bg-primary/90 text-white font-satoshi font-semibold"
                     >
                       <Mail className="mr-2 h-4 w-4" />
                       Send Message & Get Response Within 4 Hours

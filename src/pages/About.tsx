@@ -29,7 +29,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="py-20 lg:py-32 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl lg:text-6xl font-satoshi font-bold text-gray-900 mb-6">
             What Drives{' '}
             <span className="text-primary">The Drawing Board</span>
           </h1>
@@ -43,7 +43,7 @@ const About = () => {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">From Survival to Systems</h2>
+            <h2 className="text-3xl font-satoshi font-bold text-gray-900 mb-8">From Survival to Systems</h2>
             
             <p className="text-gray-600 mb-6">
               The Drawing Board wasn't born from theory—it was forged in the fires of real business struggles. 
@@ -53,7 +53,7 @@ const About = () => {
             
             <p className="text-gray-600 mb-6">
               After years of trial, error, and breakthrough, we discovered something powerful: 
-              <strong className="text-primary"> most businesses fail not because they lack great products or services, 
+              <strong className="font-satoshi text-primary"> most businesses fail not because they lack great products or services, 
               but because they lack the right systems to attract and convert customers consistently.</strong>
             </p>
             
@@ -70,7 +70,7 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-satoshi font-bold text-gray-900 mb-4">
               The TDB Philosophy
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -83,7 +83,7 @@ const About = () => {
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-8 pb-8">
                   <div className="text-5xl mb-6">{value.icon}</div>
-                  <h3 className="text-2xl font-bold text-primary mb-4">{value.title}</h3>
+                  <h3 className="text-2xl font-satoshi font-bold text-primary mb-4">{value.title}</h3>
                   <p className="text-gray-600">{value.description}</p>
                 </CardContent>
               </Card>
@@ -95,7 +95,7 @@ const About = () => {
       {/* Manifesto Section */}
       <section className="py-20 bg-primary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8">Brand Manifesto</h2>
+          <h2 className="text-3xl lg:text-4xl font-satoshi font-bold mb-8">Brand Manifesto</h2>
           
           <div className="space-y-6 text-lg">
             <p className="text-gray-200">
@@ -107,7 +107,7 @@ const About = () => {
             <p className="text-gray-200">
               We believe every struggling business is just one good system away from breakthrough.
             </p>
-            <p className="text-accent font-bold text-xl">
+            <p className="text-accent font-satoshi font-bold text-xl">
               We believe in turning the overlooked into the overbooked.
             </p>
           </div>

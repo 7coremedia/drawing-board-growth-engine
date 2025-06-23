@@ -1,4 +1,3 @@
-
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -88,7 +87,7 @@ const SuccessStories = () => {
       {/* Hero Section */}
       <section className="py-20 bg-primary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+          <h1 className="text-4xl lg:text-6xl font-satoshi font-bold mb-6">
             Proof Over Promises
           </h1>
           <p className="text-xl lg:text-2xl text-gray-200">
@@ -103,19 +102,19 @@ const SuccessStories = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">97%</div>
+              <div className="text-4xl font-satoshi font-bold text-primary mb-2">97%</div>
               <div className="text-gray-600">Success Rate</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">450%</div>
+              <div className="text-4xl font-satoshi font-bold text-primary mb-2">450%</div>
               <div className="text-gray-600">Average Growth</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">200+</div>
+              <div className="text-4xl font-satoshi font-bold text-primary mb-2">200+</div>
               <div className="text-gray-600">Businesses Transformed</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">₦2.8B</div>
+              <div className="text-4xl font-satoshi font-bold text-primary mb-2">₦2.8B</div>
               <div className="text-gray-600">Additional Revenue Generated</div>
             </div>
           </div>
@@ -126,7 +125,7 @@ const SuccessStories = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-satoshi font-bold text-gray-900 mb-4">
               From Overlooked to Overbooked
             </h2>
             <p className="text-xl text-gray-600">
@@ -149,23 +148,23 @@ const SuccessStories = () => {
                     <div>
                       <div className="flex items-center justify-between mb-4">
                         <Badge variant="secondary">{story.industry}</Badge>
-                        <span className="text-2xl font-bold text-green-600">{story.growth}</span>
+                        <span className="text-2xl font-satoshi font-bold text-green-600">{story.growth}</span>
                       </div>
                       
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{story.name}</h3>
+                      <h3 className="text-xl font-satoshi font-bold text-gray-900 mb-3">{story.name}</h3>
                       
                       <div className="space-y-2 mb-4">
                         <div className="flex justify-between text-sm">
                           <span className="text-gray-600">Before:</span>
-                          <span className="font-medium">{story.beforeRevenue}</span>
+                          <span className="font-satoshi font-medium">{story.beforeRevenue}</span>
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-gray-600">After:</span>
-                          <span className="font-medium text-primary">{story.afterRevenue}</span>
+                          <span className="font-satoshi font-medium text-primary">{story.afterRevenue}</span>
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-gray-600">Timeframe:</span>
-                          <span className="font-medium">{story.timeframe}</span>
+                          <span className="font-satoshi font-medium">{story.timeframe}</span>
                         </div>
                       </div>
                       
@@ -174,8 +173,8 @@ const SuccessStories = () => {
                       </blockquote>
                       
                       <div className="text-xs text-gray-500 mb-4">
-                        <div><strong>Challenge:</strong> {story.challenge}</div>
-                        <div><strong>Solution:</strong> {story.solution}</div>
+                        <div><strong className="font-satoshi">Challenge:</strong> {story.challenge}</div>
+                        <div><strong className="font-satoshi">Solution:</strong> {story.solution}</div>
                       </div>
                     </div>
                   </CardContent>
@@ -189,7 +188,7 @@ const SuccessStories = () => {
       {/* CTA Section */}
       <section className="py-20 bg-accent/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl lg:text-4xl font-satoshi font-bold text-gray-900 mb-6">
             Ready to Write Your Success Story?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
@@ -200,7 +199,7 @@ const SuccessStories = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4"
+              className="bg-primary hover:bg-primary/90 text-white font-satoshi font-semibold px-8 py-4"
               asChild
             >
               <a href="/#pricing">I Want These Results Too</a>
@@ -208,7 +207,7 @@ const SuccessStories = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4"
+              className="border-primary text-primary hover:bg-primary hover:text-white font-satoshi font-semibold px-8 py-4"
               asChild
             >
               <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer">
