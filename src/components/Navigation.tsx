@@ -22,11 +22,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/15f117bd-d591-46f8-8b69-e482c3a64b47.png" 
-              alt="TDB Logo" 
-              className="w-8 h-8"
-            />
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-satoshi font-bold text-sm">TDB</span>
+            </div>
             <span className="font-satoshi font-bold text-xl text-primary">TheDrawingBoard</span>
           </Link>
 
