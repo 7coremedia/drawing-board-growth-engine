@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,28 +22,72 @@ const Index = () => {
       title: 'The 7Flow Engine™',
       description: 'Our proprietary system that guarantees 7 new customers every month or your money back.',
       icon: '🎯',
-      content: 'Detailed content about 7Flow Engine system and methodology...'
+      content: {
+        headline: 'The 7Flow Engine™ - Customer Acquisition System',
+        details: [
+          'Content that actually converts and drives action',
+          'Messaging that commands attention and builds trust',
+          'Lead capture systems that are completely frictionless',
+          'Follow-up sequences that close deals automatically',
+          'Strategy tailored to your audience psychology',
+          'Real-time optimization based on performance data'
+        ],
+        cta: 'Get My 7 Customers Now'
+      }
     },
     {
       id: 'godfather',
       title: 'The Godfather Offer System™',
       description: 'Create irresistible offers that make customers say yes before you even finish talking.',
       icon: '💰',
-      content: 'Detailed content about Godfather Offer System methodology...'
+      content: {
+        headline: 'The Godfather Offer System™ - Irresistible Proposals',
+        details: [
+          'Psychological triggers that create instant desire',
+          'Value stacking that makes price irrelevant',
+          'Risk reversal that eliminates customer hesitation',
+          'Urgency mechanisms that drive immediate action',
+          'Bonus structures that increase perceived value',
+          'Guarantee frameworks that build complete trust'
+        ],
+        cta: 'Create My Godfather Offer'
+      }
     },
     {
       id: 'magnet',
       title: 'The Client Magnet Blueprint™',
       description: 'Turn your business into a customer attraction machine that works 24/7.',
       icon: '🧲',
-      content: 'Detailed content about Client Magnet Blueprint methodology...'
+      content: {
+        headline: 'The Client Magnet Blueprint™ - Attraction System',
+        details: [
+          'Brand positioning that makes you the obvious choice',
+          'Content strategies that build authority and trust',
+          'Social proof systems that validate your expertise',
+          'Referral programs that turn customers into advocates',
+          'Reputation management that protects your image',
+          'Community building that creates loyal followers'
+        ],
+        cta: 'Build My Client Magnet'
+      }
     },
     {
       id: 'growth',
       title: 'TDB Growth Engine™',
       description: 'Scale from struggling to thriving with our proven business growth framework.',
       icon: '📈',
-      content: 'Detailed content about TDB Growth Engine methodology...'
+      content: {
+        headline: 'TDB Growth Engine™ - Business Scaling System',
+        details: [
+          'Revenue optimization strategies that maximize profit',
+          'Systems automation that saves time and money',
+          'Team building frameworks for sustainable growth',
+          'Market expansion tactics for new opportunities',
+          'Operational efficiency improvements',
+          'Long-term sustainability planning and execution'
+        ],
+        cta: 'Scale My Business Now'
+      }
     },
   ];
 
@@ -67,19 +112,19 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-satoshi font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
                 Struggling to Get{' '}
-                <span className="text-primary">Clients?</span>
+                <span className="text-primary font-black">Clients?</span>
               </h1>
               <p className="text-xl lg:text-2xl text-gray-600 mb-8 font-medium">
                 We help small businesses get{' '}
-                <span className="text-primary font-satoshi font-bold">7 paying customers</span>{' '}
+                <span className="text-primary font-black">7 paying customers</span>{' '}
                 a month. Or you don't pay.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-white font-satoshi font-semibold px-8 py-4 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-white font-black px-8 py-4 text-lg"
                   asChild
                 >
                   <a href="#pricing">Start With This Plan</a>
@@ -87,7 +132,7 @@ const Index = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-primary text-primary hover:bg-primary hover:text-white font-satoshi font-semibold px-8 py-4 text-lg"
+                  className="border-primary text-primary hover:bg-primary hover:text-white font-black px-8 py-4 text-lg"
                   asChild
                 >
                   <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer">
@@ -99,21 +144,21 @@ const Index = () => {
             
             <div className="lg:text-right">
               <div className="bg-white p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-satoshi font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-black text-gray-900 mb-4">
                   From Overlooked to Overbooked
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Average Client Results:</span>
-                    <span className="font-satoshi font-bold text-primary">+284% Growth</span>
+                    <span className="font-black text-primary">+284% Growth</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Success Rate:</span>
-                    <span className="font-satoshi font-bold text-primary">97%</span>
+                    <span className="font-black text-primary">97%</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Money-Back Guarantee:</span>
-                    <span className="font-satoshi font-bold text-green-600">100%</span>
+                    <span className="font-black text-green-600">100%</span>
                   </div>
                 </div>
               </div>
@@ -132,10 +177,10 @@ const Index = () => {
       <ValuePitchSection />
 
       {/* What We Do - Interactive Engines */}
-      <section className="py-20 bg-white">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-satoshi font-bold text-gray-900 mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
               We Bring Brands Back From The Dead
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -159,10 +204,10 @@ const Index = () => {
       <PricingRevealSection />
 
       {/* Who This Is For */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-satoshi font-bold text-gray-900 mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
               Who This Is For
             </h2>
             <p className="text-xl text-gray-600">
@@ -170,13 +215,13 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {targetAudience.map((audience, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="text-4xl mb-4">{audience.icon}</div>
-                  <h3 className="font-satoshi font-semibold text-gray-900 mb-2">{audience.title}</h3>
-                  <p className="text-sm text-gray-600">{audience.description}</p>
+              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
+                <CardContent className="pt-8 pb-8">
+                  <div className="text-5xl mb-6">{audience.icon}</div>
+                  <h3 className="font-black text-gray-900 mb-4 text-lg">{audience.title}</h3>
+                  <p className="text-gray-600">{audience.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -190,30 +235,30 @@ const Index = () => {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-32 bg-primary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-satoshi font-bold mb-4">
+          <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-tight">
             Want to grow your brand and get 7 customers every month?
           </h2>
-          <p className="text-xl mb-8 text-gray-200">
+          <p className="text-xl mb-12 text-gray-200">
             Get weekly customer acquisition strategies & brand growth playbooks delivered to your inbox.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-6 max-w-lg mx-auto">
             <Input 
               type="email"
               placeholder="Enter your email address"
-              className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 flex-1"
+              className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 flex-1 h-14 px-6 text-lg"
             />
             <Button 
               size="lg"
-              className="bg-accent text-primary hover:bg-accent/90 font-satoshi font-semibold px-8"
+              className="bg-accent text-primary hover:bg-accent/90 font-black px-8 h-14 text-lg"
             >
               Get Growth Emails
             </Button>
           </div>
           
-          <p className="text-sm text-gray-300 mt-4">
+          <p className="text-gray-300 mt-8 text-lg">
             Join 2,500+ business owners getting our weekly insights
           </p>
         </div>

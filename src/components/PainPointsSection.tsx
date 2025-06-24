@@ -35,36 +35,36 @@ const PainPointsSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left side - Content */}
           <div>
-            <div className="text-center lg:text-left mb-16">
-              <h2 className="text-4xl lg:text-6xl font-satoshi font-bold mb-8 leading-tight">
+            <div className="text-center lg:text-left mb-20">
+              <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-tight">
                 If You're Great at What You Do,<br />
-                <span className="text-accent">Why Are Customers So Hard to Find?</span>
+                <span className="text-accent font-black">Why Are Customers So Hard to Find?</span>
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
               {painPoints.map((point, index) => (
                 <div 
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/15 transition-all duration-300 hover:scale-105"
+                  className="bg-white/10 backdrop-blur-sm p-8 rounded-xl hover:bg-white/15 transition-all duration-300 hover:scale-105"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <point.icon className={`${point.color} mb-4`} size={32} />
-                  <p className="text-lg">{point.text}</p>
+                  <point.icon className={`${point.color} mb-6`} size={40} />
+                  <p className="text-lg font-medium leading-relaxed">{point.text}</p>
                 </div>
               ))}
             </div>
 
             <div className="max-w-2xl">
-              <div className="bg-accent/20 backdrop-blur-sm p-8 rounded-3xl border border-accent/30">
-                <h3 className="text-3xl font-satoshi font-bold mb-6 text-accent">Truth Bomb:</h3>
-                <div className="space-y-4 text-xl">
+              <div className="bg-accent/20 backdrop-blur-sm p-10 rounded-3xl border border-accent/30">
+                <h3 className="text-3xl font-black mb-8 text-accent">Truth Bomb:</h3>
+                <div className="space-y-6 text-xl">
                   <p>Customers don't just show up. They follow systems.</p>
                   <p>They follow signals.</p>
-                  <p className="font-satoshi font-bold text-2xl">
+                  <p className="font-black text-2xl">
                     And if your brand isn't sending the right signal at the right time — you'll be skipped.
                   </p>
                 </div>
@@ -75,17 +75,19 @@ const PainPointsSection = () => {
           {/* Right side - Image */}
           <div className="lg:order-last">
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
-                alt="Business struggles"
-                className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent rounded-3xl"></div>
-              <div className="absolute bottom-8 left-8 right-8 text-center">
-                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl">
-                  <p className="text-accent font-satoshi font-bold text-xl">
-                    "I know I'm good at what I do, but where are my customers?"
-                  </p>
+              <div className="aspect-[4/5] w-full">
+                <img 
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
+                  alt="Business struggles"
+                  className="w-full h-full object-cover rounded-3xl shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent rounded-3xl"></div>
+                <div className="absolute bottom-8 left-8 right-8 text-center">
+                  <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl">
+                    <p className="text-accent font-black text-xl">
+                      "I know I'm good at what I do, but where are my customers?"
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
