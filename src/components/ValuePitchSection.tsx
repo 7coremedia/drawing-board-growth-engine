@@ -18,9 +18,9 @@ const ValuePitchSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="py-32 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-6xl font-satoshi font-bold text-gray-900 mb-8 leading-tight">
             We Built a System That Delivers<br />
             <span className="text-primary">Customers Like Clockwork</span>
@@ -28,7 +28,7 @@ const ValuePitchSection = () => {
           <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <div className="bg-primary text-white p-8 rounded-3xl mb-8">
               <h3 className="text-3xl font-satoshi font-bold mb-4">
@@ -52,7 +52,17 @@ const ValuePitchSection = () => {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
+            {/* Image placeholder for conversion graphics */}
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
+                alt="Marketing system dashboard"
+                className="w-full h-[400px] object-cover rounded-3xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-3xl"></div>
+            </div>
+
             <div className="bg-accent/20 p-8 rounded-2xl">
               <h4 className="text-2xl font-satoshi font-bold text-primary mb-6">Backed by:</h4>
               <div className="space-y-4">
@@ -73,6 +83,31 @@ const ValuePitchSection = () => {
               >
                 Get My 7 Customers Now
               </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional conversion section with image */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-20">
+          <div className="lg:col-span-2 bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl">
+            <h3 className="text-3xl font-satoshi font-bold text-gray-900 mb-6">
+              Why Other Marketing Fails (And Why We Don't)
+            </h3>
+            <div className="space-y-4 text-lg text-gray-700">
+              <p>Most marketing agencies focus on vanity metrics: likes, follows, impressions.</p>
+              <p>We focus on what actually matters: <span className="font-satoshi font-bold text-primary">paying customers walking through your door.</span></p>
+              <p>Every strategy, every piece of content, every touchpoint is designed with one goal: conversion.</p>
+            </div>
+          </div>
+          
+          <div className="relative">
+            <div className="bg-white p-6 rounded-3xl shadow-xl h-full flex flex-col justify-center">
+              <div className="text-center">
+                <div className="text-6xl font-satoshi font-bold text-primary mb-2">97%</div>
+                <p className="text-gray-600 mb-4">Success Rate</p>
+                <div className="text-4xl font-satoshi font-bold text-accent mb-2">7+</div>
+                <p className="text-gray-600">New Customers Monthly</p>
+              </div>
             </div>
           </div>
         </div>

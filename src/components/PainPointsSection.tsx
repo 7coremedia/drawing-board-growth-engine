@@ -12,10 +12,10 @@ const PainPointsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
-      {/* Animated Background */}
+    <section className="py-32 bg-primary text-white relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-primary/20 to-gray-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary"></div>
         <div className="absolute inset-0 opacity-10">
           {[...Array(20)].map((_, i) => (
             <div
@@ -34,36 +34,60 @@ const PainPointsSection = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-satoshi font-bold mb-8 leading-tight">
-            If You're Great at What You Do,<br />
-            <span className="text-accent">Why Are Customers So Hard to Find?</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {painPoints.map((point, index) => (
-            <div 
-              key={index}
-              className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/15 transition-all duration-300 hover:scale-105"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <point.icon className={`${point.color} mb-4`} size={32} />
-              <p className="text-lg">{point.text}</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left side - Content */}
+          <div>
+            <div className="text-center lg:text-left mb-16">
+              <h2 className="text-4xl lg:text-6xl font-satoshi font-bold mb-8 leading-tight">
+                If You're Great at What You Do,<br />
+                <span className="text-accent">Why Are Customers So Hard to Find?</span>
+              </h2>
             </div>
-          ))}
-        </div>
 
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-accent/20 backdrop-blur-sm p-12 rounded-3xl border border-accent/30">
-            <h3 className="text-3xl font-satoshi font-bold mb-6 text-accent">Truth Bomb:</h3>
-            <div className="space-y-4 text-xl">
-              <p>Customers don't just show up. They follow systems.</p>
-              <p>They follow signals.</p>
-              <p className="font-satoshi font-bold text-2xl">
-                And if your brand isn't sending the right signal at the right time — you'll be skipped.
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+              {painPoints.map((point, index) => (
+                <div 
+                  key={index}
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/15 transition-all duration-300 hover:scale-105"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <point.icon className={`${point.color} mb-4`} size={32} />
+                  <p className="text-lg">{point.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="max-w-2xl">
+              <div className="bg-accent/20 backdrop-blur-sm p-8 rounded-3xl border border-accent/30">
+                <h3 className="text-3xl font-satoshi font-bold mb-6 text-accent">Truth Bomb:</h3>
+                <div className="space-y-4 text-xl">
+                  <p>Customers don't just show up. They follow systems.</p>
+                  <p>They follow signals.</p>
+                  <p className="font-satoshi font-bold text-2xl">
+                    And if your brand isn't sending the right signal at the right time — you'll be skipped.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right side - Image */}
+          <div className="lg:order-last">
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
+                alt="Business struggles"
+                className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent rounded-3xl"></div>
+              <div className="absolute bottom-8 left-8 right-8 text-center">
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl">
+                  <p className="text-accent font-satoshi font-bold text-xl">
+                    "I know I'm good at what I do, but where are my customers?"
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

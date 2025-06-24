@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,25 +20,29 @@ const Index = () => {
       id: 'flow',
       title: 'The 7Flow Engine™',
       description: 'Our proprietary system that guarantees 7 new customers every month or your money back.',
-      icon: '🎯'
+      icon: '🎯',
+      content: 'Detailed content about 7Flow Engine system and methodology...'
     },
     {
       id: 'godfather',
       title: 'The Godfather Offer System™',
       description: 'Create irresistible offers that make customers say yes before you even finish talking.',
-      icon: '💰'
+      icon: '💰',
+      content: 'Detailed content about Godfather Offer System methodology...'
     },
     {
       id: 'magnet',
       title: 'The Client Magnet Blueprint™',
       description: 'Turn your business into a customer attraction machine that works 24/7.',
-      icon: '🧲'
+      icon: '🧲',
+      content: 'Detailed content about Client Magnet Blueprint methodology...'
     },
     {
       id: 'growth',
       title: 'TDB Growth Engine™',
       description: 'Scale from struggling to thriving with our proven business growth framework.',
-      icon: '📈'
+      icon: '📈',
+      content: 'Detailed content about TDB Growth Engine methodology...'
     },
   ];
 
