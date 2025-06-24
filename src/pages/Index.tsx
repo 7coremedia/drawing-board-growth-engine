@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { Mail, X } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PricingTable from '@/components/PricingTable';
@@ -15,6 +16,7 @@ import PricingRevealSection from '@/components/PricingRevealSection';
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
+  const [isLetterOpen, setIsLetterOpen] = useState(false);
 
   const engines = [
     {
@@ -103,69 +105,158 @@ const Index = () => {
     setExpandedEngine(engineId);
   };
 
+  const textLines = [
+    "Running a business isn't just about the logo, your Instagram grid, or some motivational quote on your wall.",
+    "",
+    "It's about staying in business.",
+    "",
+    "That means one thing above all else:",
+    "Customers.",
+    "",
+    "You can survive poor branding. You can survive bad ads. You might even survive a bad month.",
+    "",
+    "But the moment you run out of customers — it's game over.",
+    "",
+    "Rule #1 of Business: Don't go out of business.",
+    "",
+    "And yet every day, thousands of businesses shut their doors. Not because they're not talented.",
+    "Not because they're not good at what they do.",
+    "",
+    "But because they couldn't get customers.",
+    "",
+    "You don't have to be one of them."
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="hero-gradient tdb-pattern py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
-                Struggling to Get{' '}
-                <span className="text-primary font-black">Clients?</span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 font-medium">
-                We help small businesses get{' '}
-                <span className="text-primary font-black">7 paying customers</span>{' '}
-                a month. Or you don't pay.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-white font-black px-8 py-4 text-lg"
-                  asChild
-                >
-                  <a href="#pricing">Start With This Plan</a>
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-primary text-primary hover:bg-primary hover:text-white font-black px-8 py-4 text-lg"
-                  asChild
-                >
-                  <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer">
-                    Chat on WhatsApp
-                  </a>
-                </Button>
-              </div>
+      {/* Full-Screen Envelope Hero Section */}
+      <section className="h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25px 25px, hsl(var(--primary)) 2px, transparent 0)`,
+            backgroundSize: '50px 50px'
+          }} />
+        </div>
+
+        {/* Envelope Container */}
+        <div className="relative transform rotate-[-8deg] hover:rotate-[-5deg] transition-transform duration-500">
+          <div className="relative bg-gradient-to-br from-green-800 to-green-900 w-96 h-64 rounded-lg shadow-2xl border border-green-700 perspective-1000">
+            {/* Envelope styling */}
+            <div className="absolute inset-0 bg-gradient-to-br from-green-800/90 to-green-900/90 rounded-lg"></div>
+            
+            {/* Envelope flap */}
+            <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-green-700 to-green-800 rounded-t-lg"></div>
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[40px] border-r-[40px] border-t-[30px] border-l-transparent border-r-transparent border-t-green-600"></div>
+            
+            {/* Notification circle */}
+            <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-3 h-3 bg-white rounded-full"></div>
             </div>
             
-            <div className="lg:text-right">
-              <div className="bg-white p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-black text-gray-900 mb-4">
-                  From Overlooked to Overbooked
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Average Client Results:</span>
-                    <span className="font-black text-primary">+284% Growth</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Success Rate:</span>
-                    <span className="font-black text-primary">97%</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Money-Back Guarantee:</span>
-                    <span className="font-black text-green-600">100%</span>
+            {/* Envelope content */}
+            <div className="relative z-10 text-white p-8 pt-16">
+              <div className="flex items-center gap-2 mb-4">
+                <Mail size={24} className="text-accent" />
+                <span className="text-accent font-black text-sm">NEW MESSAGE</span>
+              </div>
+              
+              <div className="space-y-3 text-sm">
+                <div className="font-black text-lg">From: TDB Founder - King Edmund</div>
+                <div className="text-gray-200">To: Business Owners</div>
+                <div className="text-gray-300">Date: June 2025</div>
+              </div>
+              
+              <Button 
+                onClick={() => setIsLetterOpen(true)}
+                className="mt-6 bg-accent text-primary hover:bg-accent/90 font-black text-lg px-6 py-3 w-full"
+              >
+                Read Letter
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+          <div className="animate-bounce-gentle">
+            <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-primary rounded-full mt-2"></div>
+            </div>
+          </div>
+          <p className="text-gray-600 mt-2 font-medium">Scroll to continue</p>
+        </div>
+      </section>
+
+      {/* Letter Modal */}
+      {isLetterOpen && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button 
+              onClick={() => setIsLetterOpen(false)}
+              className="absolute top-4 right-4 z-10 bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition-colors"
+            >
+              <X size={20} />
+            </button>
+            
+            <div className="p-8">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-black text-gray-900 mb-4">A Letter From King Edmund</h3>
+                <p className="text-gray-600">TDB Founder</p>
+              </div>
+              
+              <div className="prose max-w-none" style={{ fontFamily: 'Kalam, cursive' }}>
+                <div className="space-y-6 text-lg leading-relaxed">
+                  <p className="font-black text-xl text-gray-700 mb-6">Dear Business Owner,</p>
+                  
+                  {textLines.map((line, index) => {
+                    if (line === "") {
+                      return <div key={index} className="h-4"></div>;
+                    }
+                    
+                    if (line === "Customers.") {
+                      return (
+                        <p key={index} className="font-black text-primary text-3xl">
+                          {line}
+                        </p>
+                      );
+                    }
+                    
+                    if (line.includes("Rule #1")) {
+                      return (
+                        <div key={index} className="bg-primary/10 p-6 rounded-xl">
+                          <p className="font-black text-2xl text-primary">{line}</p>
+                        </div>
+                      );
+                    }
+                    
+                    return (
+                      <p key={index} className="text-gray-700" style={{ lineHeight: '1.8' }}>
+                        {line}
+                      </p>
+                    );
+                  })}
+                  
+                  <div className="text-center pt-8">
+                    <p className="font-black text-primary text-2xl mb-6">
+                      You don't have to be one of them.
+                    </p>
+                    <Button 
+                      size="lg"
+                      className="bg-primary hover:bg-primary/90 text-white font-black px-8 py-4 text-lg"
+                      onClick={() => setIsLetterOpen(false)}
+                    >
+                      Get My Solution Now
+                    </Button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      )}
 
       {/* Story Section */}
       <StorySection />
