@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { Mail, X } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PricingTable from '@/components/PricingTable';
@@ -11,7 +12,6 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
-import { Mail, X } from 'lucide-react';
 
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
@@ -131,73 +131,124 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Hero Section with Full Screen Letter */}
-      <section className="hero-gradient tdb-pattern min-h-screen flex items-center justify-center relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[80vh]">
-            <div className="space-y-12">
-              <h1 className="text-5xl lg:text-7xl font-black text-gray-900 mb-8 leading-[0.9] tracking-tight">
-                Struggling to Get{' '}
-                <span className="text-primary font-black">Clients?</span>
-              </h1>
-              <p className="text-2xl lg:text-3xl text-gray-600 mb-12 font-bold leading-tight">
-                We help small businesses get{' '}
-                <span className="text-primary font-black">7 paying customers</span>{' '}
-                a month. Or you don't pay.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-white font-black px-10 py-6 text-xl glow-element"
-                  asChild
-                >
-                  <a href="#pricing">Start With This Plan</a>
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-primary text-primary hover:bg-primary hover:text-white font-black px-10 py-6 text-xl glow-element"
-                  asChild
-                >
-                  <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer">
-                    Chat on WhatsApp
-                  </a>
-                </Button>
-              </div>
+      {/* Full-Screen Envelope Hero Section */}
+      <section className="h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25px 25px, hsl(var(--primary)) 2px, transparent 0)`,
+            backgroundSize: '50px 50px'
+          }} />
+        </div>
+
+        {/* Envelope Container */}
+        <div className="relative transform rotate-[-8deg] hover:rotate-[-5deg] transition-transform duration-500">
+          <div className="relative bg-gradient-to-br from-green-800 to-green-900 w-96 h-64 rounded-lg shadow-2xl border border-green-700 perspective-1000">
+            {/* Envelope styling */}
+            <div className="absolute inset-0 bg-gradient-to-br from-green-800/90 to-green-900/90 rounded-lg"></div>
+            
+            {/* Envelope flap */}
+            <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-green-700 to-green-800 rounded-t-lg"></div>
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[40px] border-r-[40px] border-t-[30px] border-l-transparent border-r-transparent border-t-green-600"></div>
+            
+            {/* Notification circle */}
+            <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-3 h-3 bg-white rounded-full"></div>
             </div>
             
-            {/* Full Screen Letter */}
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-lg transform rotate-12 hover:rotate-6 transition-transform duration-500">
-                <div className="relative bg-gradient-to-br from-green-800 to-green-900 p-8 rounded-lg glow-element w-full h-80 border border-green-700">
-                  {/* Envelope styling */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-800/90 to-green-900/90 rounded-lg"></div>
+            {/* Envelope content */}
+            <div className="relative z-10 text-white p-8 pt-16">
+              <div className="flex items-center gap-2 mb-4">
+                <Mail size={24} className="text-accent" />
+                <span className="text-accent font-black text-sm">NEW MESSAGE</span>
+              </div>
+              
+              <div className="space-y-3 text-sm">
+                <div className="font-black text-lg">From: TDB Founder - King Edmund</div>
+                <div className="text-gray-200">To: Business Owners</div>
+                <div className="text-gray-300">Date: June 2025</div>
+              </div>
+              
+              <Button 
+                onClick={() => setIsLetterOpen(true)}
+                className="mt-6 bg-accent text-primary hover:bg-accent/90 font-black text-lg px-6 py-3 w-full"
+              >
+                Read Letter
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+          <div className="animate-bounce-gentle">
+            <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-primary rounded-full mt-2"></div>
+            </div>
+          </div>
+          <p className="text-gray-600 mt-2 font-medium">Scroll to continue</p>
+        </div>
+      </section>
+
+      {/* Letter Modal */}
+      {isLetterOpen && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button 
+              onClick={() => setIsLetterOpen(false)}
+              className="absolute top-4 right-4 z-10 bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition-colors"
+            >
+              <X size={20} />
+            </button>
+            
+            <div className="p-8">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-black text-gray-900 mb-4">A Letter From King Edmund</h3>
+                <p className="text-gray-600">TDB Founder</p>
+              </div>
+              
+              <div className="prose max-w-none" style={{ fontFamily: 'Kalam, cursive' }}>
+                <div className="space-y-6 text-lg leading-relaxed">
+                  <p className="font-black text-xl text-gray-700 mb-6">Dear Business Owner,</p>
                   
-                  {/* Notification circle */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                    <div className="w-4 h-4 bg-white rounded-full"></div>
-                  </div>
-                  
-                  {/* Envelope content */}
-                  <div className="relative z-10 text-white h-full flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center gap-3 mb-6">
-                        <Mail size={24} className="text-accent" />
-                        <span className="text-accent font-black text-lg">NEW MESSAGE</span>
-                      </div>
-                      
-                      <div className="space-y-4 text-lg">
-                        <div className="font-black">From: TDB Founder - King Edmund</div>
-                        <div>To: Business Owners</div>
-                        <div className="text-gray-300">Date: June 2025</div>
-                      </div>
-                    </div>
+                  {textLines.map((line, index) => {
+                    if (line === "") {
+                      return <div key={index} className="h-4"></div>;
+                    }
                     
+                    if (line === "Customers.") {
+                      return (
+                        <p key={index} className="font-black text-primary text-3xl">
+                          {line}
+                        </p>
+                      );
+                    }
+                    
+                    if (line.includes("Rule #1")) {
+                      return (
+                        <div key={index} className="bg-primary/10 p-6 rounded-xl">
+                          <p className="font-black text-2xl text-primary">{line}</p>
+                        </div>
+                      );
+                    }
+                    
+                    return (
+                      <p key={index} className="text-gray-700" style={{ lineHeight: '1.8' }}>
+                        {line}
+                      </p>
+                    );
+                  })}
+                  
+                  <div className="text-center pt-8">
+                    <p className="font-black text-primary text-2xl mb-6">
+                      You don't have to be one of them.
+                    </p>
                     <Button 
-                      onClick={() => setIsLetterOpen(true)}
-                      className="bg-accent text-primary hover:bg-accent/90 font-black text-lg px-6 py-3 w-full"
+                      size="lg"
+                      className="bg-primary hover:bg-primary/90 text-white font-black px-8 py-4 text-lg"
+                      onClick={() => setIsLetterOpen(false)}
                     >
-                      Read Letter
+                      Get My Solution Now
                     </Button>
                   </div>
                 </div>
@@ -205,75 +256,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-
-        {/* Letter Modal */}
-        {isLetterOpen && (
-          <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl max-w-6xl w-full max-h-[95vh] overflow-y-auto relative glow-element">
-              <button 
-                onClick={() => setIsLetterOpen(false)}
-                className="absolute top-6 right-6 z-10 bg-red-500 text-white rounded-full p-3 hover:bg-red-600 transition-colors"
-              >
-                <X size={24} />
-              </button>
-              
-              <div className="p-12">
-                <div className="text-center mb-12">
-                  <h3 className="text-4xl font-black text-gray-900 mb-6">A Letter From King Edmund</h3>
-                  <p className="text-xl text-gray-600">TDB Founder</p>
-                </div>
-                
-                <div className="max-w-4xl mx-auto" style={{ fontFamily: 'Kalam, cursive' }}>
-                  <div className="space-y-8 text-xl leading-relaxed">
-                    <p className="font-black text-2xl text-gray-700 mb-8">Dear Business Owner,</p>
-                    
-                    {textLines.map((line, index) => {
-                      if (line === "") {
-                        return <div key={index} className="h-6"></div>;
-                      }
-                      
-                      if (line === "Customers.") {
-                        return (
-                          <p key={index} className="font-black text-primary text-4xl text-center my-8">
-                            {line}
-                          </p>
-                        );
-                      }
-                      
-                      if (line.includes("Rule #1")) {
-                        return (
-                          <div key={index} className="bg-primary/10 p-8 rounded-xl glow-element">
-                            <p className="font-black text-3xl text-primary text-center">{line}</p>
-                          </div>
-                        );
-                      }
-                      
-                      return (
-                        <p key={index} className="text-gray-700" style={{ lineHeight: '1.8' }}>
-                          {line}
-                        </p>
-                      );
-                    })}
-                    
-                    <div className="text-center pt-12">
-                      <p className="font-black text-primary text-3xl mb-8">
-                        You don't have to be one of them.
-                      </p>
-                      <Button 
-                        size="lg"
-                        className="bg-primary hover:bg-primary/90 text-white font-black px-10 py-6 text-xl glow-element"
-                        onClick={() => setIsLetterOpen(false)}
-                      >
-                        Get My Solution Now
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </section>
+      )}
 
       {/* Story Section */}
       <StorySection />
@@ -288,10 +271,10 @@ const Index = () => {
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-7xl font-black text-gray-900 mb-8 leading-[0.9]">
+            <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
               We Bring Brands Back From The Dead
             </h2>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From overlooked to overbooked. Our proven systems transform struggling businesses 
               into customer-attracting machines.
             </p>
@@ -315,21 +298,21 @@ const Index = () => {
       <section className="py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-7xl font-black text-gray-900 mb-8 leading-[0.9]">
+            <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
               Who This Is For
             </h2>
-            <p className="text-2xl text-gray-600 font-medium">
+            <p className="text-xl text-gray-600">
               We specialize in helping these types of businesses get more customers
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {targetAudience.map((audience, index) => (
-              <Card key={index} className="text-center hover:scale-105 transition-all duration-300 border-0 glow-element">
+              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
                 <CardContent className="pt-8 pb-8">
-                  <div className="text-6xl mb-6">{audience.icon}</div>
-                  <h3 className="font-black text-gray-900 mb-4 text-xl">{audience.title}</h3>
-                  <p className="text-gray-600 text-lg">{audience.description}</p>
+                  <div className="text-5xl mb-6">{audience.icon}</div>
+                  <h3 className="font-black text-gray-900 mb-4 text-lg">{audience.title}</h3>
+                  <p className="text-gray-600">{audience.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -344,29 +327,29 @@ const Index = () => {
 
       {/* Newsletter Signup */}
       <section className="py-32 bg-primary text-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl lg:text-7xl font-black mb-8 leading-[0.9]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-tight">
             Want to grow your brand and get 7 customers every month?
           </h2>
-          <p className="text-2xl mb-12 text-gray-200 font-medium leading-relaxed">
+          <p className="text-xl mb-12 text-gray-200">
             Get weekly customer acquisition strategies & brand growth playbooks delivered to your inbox.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-8 max-w-2xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-6 max-w-lg mx-auto">
             <Input 
               type="email"
               placeholder="Enter your email address"
-              className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 flex-1 h-16 px-8 text-xl glow-element"
+              className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 flex-1 h-14 px-6 text-lg"
             />
             <Button 
               size="lg"
-              className="bg-accent text-primary hover:bg-accent/90 font-black px-10 h-16 text-xl glow-element"
+              className="bg-accent text-primary hover:bg-accent/90 font-black px-8 h-14 text-lg"
             >
               Get Growth Emails
             </Button>
           </div>
           
-          <p className="text-gray-300 mt-10 text-xl font-medium">
+          <p className="text-gray-300 mt-8 text-lg">
             Join 2,500+ business owners getting our weekly insights
           </p>
         </div>
