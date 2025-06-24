@@ -1,29 +1,42 @@
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PricingTable from '@/components/PricingTable';
+import InteractiveEnginePopup from '@/components/InteractiveEnginePopup';
+import StorySection from '@/components/StorySection';
+import PainPointsSection from '@/components/PainPointsSection';
+import ValuePitchSection from '@/components/ValuePitchSection';
+import PricingRevealSection from '@/components/PricingRevealSection';
 
 const Index = () => {
-  const services = [
+  const [activeEngine, setActiveEngine] = useState<string | null>(null);
+  const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
+
+  const engines = [
     {
+      id: 'flow',
       title: 'The 7Flow Engine™',
       description: 'Our proprietary system that guarantees 7 new customers every month or your money back.',
       icon: '🎯'
     },
     {
+      id: 'godfather',
       title: 'The Godfather Offer System™',
       description: 'Create irresistible offers that make customers say yes before you even finish talking.',
       icon: '💰'
     },
     {
+      id: 'magnet',
       title: 'The Client Magnet Blueprint™',
       description: 'Turn your business into a customer attraction machine that works 24/7.',
       icon: '🧲'
     },
     {
+      id: 'growth',
       title: 'TDB Growth Engine™',
       description: 'Scale from struggling to thriving with our proven business growth framework.',
       icon: '📈'
@@ -37,6 +50,10 @@ const Index = () => {
     { title: 'Local Service Providers', icon: '🔧', description: 'Dominate your local market' },
     { title: 'Online Course Creators', icon: '📚', description: 'Turn knowledge into profit' },
   ];
+
+  const handleEngineClick = (engineId: string) => {
+    setExpandedEngine(engineId);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -102,7 +119,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What We Do */}
+      {/* Story Section */}
+      <StorySection />
+
+      {/* Pain Points Section */}
+      <PainPointsSection />
+
+      {/* Value Pitch Section */}
+      <ValuePitchSection />
+
+      {/* What We Do - Interactive Engines */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -115,21 +141,19 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <CardTitle className="text-xl font-satoshi text-primary">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <InteractiveEnginePopup 
+            engines={engines}
+            activeEngine={activeEngine}
+            onEngineHover={setActiveEngine}
+            onEngineClick={handleEngineClick}
+            expandedEngine={expandedEngine}
+            onCloseExpanded={() => setExpandedEngine(null)}
+          />
         </div>
       </section>
+
+      {/* Pricing Reveal Section */}
+      <PricingRevealSection />
 
       {/* Who This Is For */}
       <section className="py-20 bg-gray-50">
