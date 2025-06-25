@@ -10,100 +10,75 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
-
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
-
-  const engines = [
-    {
-      id: 'flow',
-      title: 'The 7Flow Engine™',
-      description: 'Our proprietary system that guarantees 7 new customers every month or your money back.',
-      icon: '🎯',
-      content: {
-        headline: 'The 7Flow Engine™ - Customer Acquisition System',
-        details: [
-          'Content that actually converts and drives action',
-          'Messaging that commands attention and builds trust',
-          'Lead capture systems that are completely frictionless',
-          'Follow-up sequences that close deals automatically',
-          'Strategy tailored to your audience psychology',
-          'Real-time optimization based on performance data'
-        ],
-        cta: 'Get My 7 Customers Now'
-      }
-    },
-    {
-      id: 'godfather',
-      title: 'The Godfather Offer System™',
-      description: 'Create irresistible offers that make customers say yes before you even finish talking.',
-      icon: '💰',
-      content: {
-        headline: 'The Godfather Offer System™ - Irresistible Proposals',
-        details: [
-          'Psychological triggers that create instant desire',
-          'Value stacking that makes price irrelevant',
-          'Risk reversal that eliminates customer hesitation',
-          'Urgency mechanisms that drive immediate action',
-          'Bonus structures that increase perceived value',
-          'Guarantee frameworks that build complete trust'
-        ],
-        cta: 'Create My Godfather Offer'
-      }
-    },
-    {
-      id: 'magnet',
-      title: 'The Client Magnet Blueprint™',
-      description: 'Turn your business into a customer attraction machine that works 24/7.',
-      icon: '🧲',
-      content: {
-        headline: 'The Client Magnet Blueprint™ - Attraction System',
-        details: [
-          'Brand positioning that makes you the obvious choice',
-          'Content strategies that build authority and trust',
-          'Social proof systems that validate your expertise',
-          'Referral programs that turn customers into advocates',
-          'Reputation management that protects your image',
-          'Community building that creates loyal followers'
-        ],
-        cta: 'Build My Client Magnet'
-      }
-    },
-    {
-      id: 'growth',
-      title: 'TDB Growth Engine™',
-      description: 'Scale from struggling to thriving with our proven business growth framework.',
-      icon: '📈',
-      content: {
-        headline: 'TDB Growth Engine™ - Business Scaling System',
-        details: [
-          'Revenue optimization strategies that maximize profit',
-          'Systems automation that saves time and money',
-          'Team building frameworks for sustainable growth',
-          'Market expansion tactics for new opportunities',
-          'Operational efficiency improvements',
-          'Long-term sustainability planning and execution'
-        ],
-        cta: 'Scale My Business Now'
-      }
-    },
-  ];
-
-  const targetAudience = [
-    { title: 'Fashion & Beauty Brands', icon: '💄', description: 'Scale your style empire' },
-    { title: 'Gym/Fitness Owners', icon: '💪', description: 'Build your fitness community' },
-    { title: 'Coaches & Experts', icon: '🎓', description: 'Monetize your expertise' },  
-    { title: 'Local Service Providers', icon: '🔧', description: 'Dominate your local market' },
-    { title: 'Online Course Creators', icon: '📚', description: 'Turn knowledge into profit' },
-  ];
-
+  const engines = [{
+    id: 'flow',
+    title: 'The 7Flow Engine™',
+    description: 'Our proprietary system that guarantees 7 new customers every month or your money back.',
+    icon: '🎯',
+    content: {
+      headline: 'The 7Flow Engine™ - Customer Acquisition System',
+      details: ['Content that actually converts and drives action', 'Messaging that commands attention and builds trust', 'Lead capture systems that are completely frictionless', 'Follow-up sequences that close deals automatically', 'Strategy tailored to your audience psychology', 'Real-time optimization based on performance data'],
+      cta: 'Get My 7 Customers Now'
+    }
+  }, {
+    id: 'godfather',
+    title: 'The Godfather Offer System™',
+    description: 'Create irresistible offers that make customers say yes before you even finish talking.',
+    icon: '💰',
+    content: {
+      headline: 'The Godfather Offer System™ - Irresistible Proposals',
+      details: ['Psychological triggers that create instant desire', 'Value stacking that makes price irrelevant', 'Risk reversal that eliminates customer hesitation', 'Urgency mechanisms that drive immediate action', 'Bonus structures that increase perceived value', 'Guarantee frameworks that build complete trust'],
+      cta: 'Create My Godfather Offer'
+    }
+  }, {
+    id: 'magnet',
+    title: 'The Client Magnet Blueprint™',
+    description: 'Turn your business into a customer attraction machine that works 24/7.',
+    icon: '🧲',
+    content: {
+      headline: 'The Client Magnet Blueprint™ - Attraction System',
+      details: ['Brand positioning that makes you the obvious choice', 'Content strategies that build authority and trust', 'Social proof systems that validate your expertise', 'Referral programs that turn customers into advocates', 'Reputation management that protects your image', 'Community building that creates loyal followers'],
+      cta: 'Build My Client Magnet'
+    }
+  }, {
+    id: 'growth',
+    title: 'TDB Growth Engine™',
+    description: 'Scale from struggling to thriving with our proven business growth framework.',
+    icon: '📈',
+    content: {
+      headline: 'TDB Growth Engine™ - Business Scaling System',
+      details: ['Revenue optimization strategies that maximize profit', 'Systems automation that saves time and money', 'Team building frameworks for sustainable growth', 'Market expansion tactics for new opportunities', 'Operational efficiency improvements', 'Long-term sustainability planning and execution'],
+      cta: 'Scale My Business Now'
+    }
+  }];
+  const targetAudience = [{
+    title: 'Fashion & Beauty Brands',
+    icon: '💄',
+    description: 'Scale your style empire'
+  }, {
+    title: 'Gym/Fitness Owners',
+    icon: '💪',
+    description: 'Build your fitness community'
+  }, {
+    title: 'Coaches & Experts',
+    icon: '🎓',
+    description: 'Monetize your expertise'
+  }, {
+    title: 'Local Service Providers',
+    icon: '🔧',
+    description: 'Dominate your local market'
+  }, {
+    title: 'Online Course Creators',
+    icon: '📚',
+    description: 'Turn knowledge into profit'
+  }];
   const handleEngineClick = (engineId: string) => {
     setExpandedEngine(engineId);
   };
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section */}
@@ -120,20 +95,11 @@ const Index = () => {
               a month. Or you don't pay.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-white font-black px-10 py-6 text-xl"
-                asChild
-              >
-                <a href="#pricing">Start With This Plan</a>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black px-10 py-6 text-xl" asChild>
+                <a href="#pricing" className="py-[24px]">Start With This Plan</a>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-primary text-primary hover:bg-primary hover:text-white font-black px-10 py-6 text-xl"
-                asChild
-              >
-                <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-black px-10 py-6 text-xl" asChild>
+                <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer" className="py-px">
                   Chat on WhatsApp
                 </a>
               </Button>
@@ -142,7 +108,7 @@ const Index = () => {
           
           {/* From Overlooked to Overbooked - Moved Below */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-lg glow border border-gray-100">
+            <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-lg glow border border-gray-100 px-[33px] mx-0 my-0 py-[154px]">
               <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-8 text-center">
                 From Overlooked to Overbooked
               </h3>
@@ -187,14 +153,7 @@ const Index = () => {
             </p>
           </div>
 
-          <InteractiveEnginePopup 
-            engines={engines}
-            activeEngine={activeEngine}
-            onEngineHover={setActiveEngine}
-            onEngineClick={handleEngineClick}
-            expandedEngine={expandedEngine}
-            onCloseExpanded={() => setExpandedEngine(null)}
-          />
+          <InteractiveEnginePopup engines={engines} activeEngine={activeEngine} onEngineHover={setActiveEngine} onEngineClick={handleEngineClick} expandedEngine={expandedEngine} onCloseExpanded={() => setExpandedEngine(null)} />
         </div>
       </section>
 
@@ -214,15 +173,13 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {targetAudience.map((audience, index) => (
-              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
+            {targetAudience.map((audience, index) => <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
                 <CardContent className="pt-8 pb-8">
                   <div className="text-5xl mb-6">{audience.icon}</div>
                   <h3 className="font-black text-gray-900 mb-4 text-lg">{audience.title}</h3>
                   <p className="text-gray-600">{audience.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -243,15 +200,8 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 max-w-lg mx-auto">
-            <Input 
-              type="email"
-              placeholder="Enter your email address"
-              className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 flex-1 h-14 px-6 text-lg"
-            />
-            <Button 
-              size="lg"
-              className="bg-accent text-primary hover:bg-accent/90 font-black px-8 h-14 text-lg"
-            >
+            <Input type="email" placeholder="Enter your email address" className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 flex-1 h-14 px-6 text-lg" />
+            <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-black px-8 h-14 text-lg">
               Get Growth Emails
             </Button>
           </div>
@@ -263,8 +213,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
