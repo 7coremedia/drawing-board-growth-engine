@@ -30,21 +30,22 @@ const StorySection = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-green-800 to-green-900 p-8 rounded-lg glow w-80 h-56 border border-green-700 bg-slate-200 mx-[27px] px-[23px]">
               {/* Notification circle */}
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center px-[44px] py-[18px] mx-[9px]">
+                
               </div>
               
               {/* Envelope content */}
               <div className="text-white h-full flex flex-col justify-between">
                 <div className="flex items-center gap-2 mb-4">
                   <Mail size={24} className="text-accent" />
-                  <span className="text-accent font-black text-sm">NEW MESSAGE</span>
+                  <span className="text-accent font-black text-sm">1 NEW NOTIFICATION         JUN 25</span>
                 </div>
                 
                 <div className="space-y-2 text-sm">
-                  <div className="font-black">From: TDB Founder - King Edmund</div>
+                  <div className="font-black">TDB Founder - King Edmund</div>
                   <div>To: Business Owners</div>
-                  <div className="text-gray-300">Date: June 2025</div>
+                  <div className="text-gray-300">
+                </div>
                 </div>
                 
                 <Button onClick={() => setIsLetterOpen(true)} className="bg-accent text-primary hover:bg-accent/90 font-black text-sm w-full my-[5px] mx-0 px-[19px] py-0 rounded-xl">
