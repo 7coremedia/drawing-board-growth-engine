@@ -108,15 +108,13 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Image Placeholder - Full Width */}
+          {/* Hero Image - Edge to Edge */}
           <div className="w-full mb-20">
-            <div className="bg-gray-200 w-full h-96 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300">
-              <div className="text-center text-gray-500">
-                <div className="text-6xl mb-4">📸</div>
-                <p className="text-xl font-semibold">Image Placeholder</p>
-                <p className="text-lg">Half-person height (head to stomach)</p>
-              </div>
-            </div>
+            <img 
+              src="/lovable-uploads/4924a7e2-93f8-4bc8-8d54-2582748be875.png" 
+              alt="Business owner struggling with client acquisition" 
+              className="w-full h-96 object-cover"
+            />
           </div>
           
           {/* From Overlooked to Overbooked - Moved Further Down */}
