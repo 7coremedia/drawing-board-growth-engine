@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,11 +75,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: 'Satoshi', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-black tracking-tight;
+    font-family: 'Satoshi', sans-serif;
   }
 
   /* Hide scrollbar */
@@ -100,6 +103,14 @@
     background-image: 
       radial-gradient(circle at 1px 1px, hsl(var(--accent) / 0.2) 1px, transparent 0);
     background-size: 20px 20px;
+  }
+
+  .glow {
+    box-shadow: 0 0 20px rgba(29, 58, 41, 0.2), 0 0 40px rgba(29, 58, 41, 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(218, 240, 141, 0.3), 0 0 40px rgba(218, 240, 141, 0.15);
   }
 }
 
@@ -146,6 +157,17 @@
   }
 }
 
+@keyframes roll-down {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 2000px;
+    opacity: 1;
+  }
+}
+
 /* Animation Classes */
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
@@ -161,6 +183,10 @@
 
 .animate-bounce-gentle {
   animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-roll-down {
+  animation: roll-down 0.8s ease-out forwards;
 }
 
 /* Stagger animations */
