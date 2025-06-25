@@ -10,6 +10,7 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
+
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
@@ -78,7 +79,8 @@ const Index = () => {
   const handleEngineClick = (engineId: string) => {
     setExpandedEngine(engineId);
   };
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section */}
@@ -106,7 +108,18 @@ const Index = () => {
             </div>
           </div>
           
-          {/* From Overlooked to Overbooked - Moved Below */}
+          {/* Image Placeholder - Full Width */}
+          <div className="w-full mb-20">
+            <div className="bg-gray-200 w-full h-96 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300">
+              <div className="text-center text-gray-500">
+                <div className="text-6xl mb-4">📸</div>
+                <p className="text-xl font-semibold">Image Placeholder</p>
+                <p className="text-lg">Half-person height (head to stomach)</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* From Overlooked to Overbooked - Moved Further Down */}
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-lg glow border border-gray-100 px-[33px] mx-0 my-0 py-[154px]">
               <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-8 text-center">
@@ -173,13 +186,15 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {targetAudience.map((audience, index) => <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
+            {targetAudience.map((audience, index) => (
+              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
                 <CardContent className="pt-8 pb-8">
                   <div className="text-5xl mb-6">{audience.icon}</div>
                   <h3 className="font-black text-gray-900 mb-4 text-lg">{audience.title}</h3>
                   <p className="text-gray-600">{audience.description}</p>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -213,6 +228,8 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
