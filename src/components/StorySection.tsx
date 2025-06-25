@@ -28,7 +28,7 @@ const StorySection = () => {
         {/* Centered Envelope */}
         <div className="flex justify-center mb-16">
           <div className="relative">
-            <div className="bg-gradient-to-br from-green-800 to-green-900 p-8 rounded-lg glow w-80 h-56 border border-green-700 mx-0">
+            <div className="bg-gradient-to-br from-green-800 to-green-900 p-8 rounded-lg glow w-80 h-56 border border-green-700 bg-slate-200 mx-[27px] px-[23px]">
               {/* Notification circle */}
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
                 <div className="w-3 h-3 bg-white rounded-full"></div>
@@ -47,7 +47,7 @@ const StorySection = () => {
                   <div className="text-gray-300">Date: June 2025</div>
                 </div>
                 
-                <Button onClick={() => setIsLetterOpen(true)} className="bg-accent text-primary hover:bg-accent/90 font-black text-sm px-6 py-3 w-full">
+                <Button onClick={() => setIsLetterOpen(true)} className="bg-accent text-primary hover:bg-accent/90 font-black text-sm w-full my-[5px] mx-0 px-[19px] py-0 rounded-xl">
                   Read Letter
                 </Button>
               </div>
