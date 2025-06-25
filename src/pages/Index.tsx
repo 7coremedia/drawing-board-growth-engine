@@ -10,7 +10,6 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
-
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
@@ -79,17 +78,16 @@ const Index = () => {
   const handleEngineClick = (engineId: string) => {
     setExpandedEngine(engineId);
   };
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section */}
       <section className="hero-gradient tdb-pattern py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-6xl lg:text-8xl font-black text-gray-900 mb-8 leading-tight tracking-tight">
+            <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
               Struggling to Get{' '}
-              <span className="text-primary font-black">Clients?</span>
+              <span className="font-black text-lime-500">Clients?</span>
             </h1>
             <p className="text-2xl lg:text-4xl text-gray-600 mb-12 font-bold max-w-5xl mx-auto leading-relaxed">
               We help small businesses get{' '}
@@ -110,11 +108,7 @@ const Index = () => {
           
           {/* Hero Image - Edge to Edge */}
           <div className="w-full mb-20">
-            <img 
-              src="/lovable-uploads/4924a7e2-93f8-4bc8-8d54-2582748be875.png" 
-              alt="Business owner struggling with client acquisition" 
-              className="w-full h-96 object-cover"
-            />
+            <img src="/lovable-uploads/4924a7e2-93f8-4bc8-8d54-2582748be875.png" alt="Business owner struggling with client acquisition" className="w-full h-96 object-cover" />
           </div>
           
           {/* From Overlooked to Overbooked - Moved Further Down */}
@@ -184,15 +178,13 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {targetAudience.map((audience, index) => (
-              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
+            {targetAudience.map((audience, index) => <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
                 <CardContent className="pt-8 pb-8">
                   <div className="text-5xl mb-6">{audience.icon}</div>
                   <h3 className="font-black text-gray-900 mb-4 text-lg">{audience.title}</h3>
                   <p className="text-gray-600">{audience.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -226,8 +218,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
