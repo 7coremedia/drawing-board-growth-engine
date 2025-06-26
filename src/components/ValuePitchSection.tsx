@@ -54,7 +54,7 @@ const ValuePitchSection = () => {
               </div>
             </div>
 
-            <div className="text-center bg-primary text-white p-10 rounded-2xl">
+            <div className="text-center bg-primary text-white p-10 rounded-2xl px-[40px] py-[40px]">
               <h4 className="text-2xl font-black mb-6">Ready to Get Started?</h4>
               <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-black px-8 py-4 text-lg">
                 Get My 7 Customers Now
