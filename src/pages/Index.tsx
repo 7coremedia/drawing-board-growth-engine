@@ -108,7 +108,7 @@ const Index = () => {
           
           {/* Hero Image - Edge to Edge */}
           <div className="w-full mb-20">
-            <img src="/lovable-uploads/4924a7e2-93f8-4bc8-8d54-2582748be875.png" alt="Business owner struggling with client acquisition" className="w-full h-96 object-cover" />
+            <img alt="Business owner struggling with client acquisition" className="w-full h-96 object-cover" src="/lovable-uploads/be10801c-1d8f-4bf7-a5f0-292e36225987.png" />
           </div>
           
           {/* From Overlooked to Overbooked - Moved Further Down */}
