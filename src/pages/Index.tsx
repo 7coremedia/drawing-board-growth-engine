@@ -94,9 +94,9 @@ const Index = () => {
               <span className="text-primary font-black">7 paying customers</span>{' '}
               a month. Or you don't pay.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20 bg-[#000a0e]/0 px-[237px] py-0 my-0 mx-[103px] rounded-2xl">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black px-10 py-6 text-xl" asChild>
-                <a href="#pricing" className="py-[24px]">Start With This Plan</a>
+                <a href="#pricing" className="py-[24px] ">Start With This Plan</a>
               </Button>
               <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-black px-10 py-6 text-xl" asChild>
                 <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer" className="py-px">
