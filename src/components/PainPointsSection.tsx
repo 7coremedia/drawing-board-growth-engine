@@ -28,7 +28,7 @@ const PainPointsSection = () => {
   return <section className="py-32 bg-primary text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/90 to-black bg-green-500"></div>
+        
         
       </div>
 
