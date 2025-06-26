@@ -82,7 +82,7 @@ const PainPointsSection = () => {
                 <img alt="Business struggles" src="/lovable-uploads/77667891-1f4d-4a91-9418-ec08432d5629.png" className="w-full h-full rounded-3xl shadow-2xl object-cover" />
                 
                 <div className="absolute bottom-8 left-8 right-8 text-center">
-                  <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl">
+                  <div className="bg-white/20 backdrop-blur-sm p-8 py-[31px] px-[26px] mx-0 my-[2px] rounded-3xl">
                     <p className="text-accent font-black text-xl">
                       "I know I'm good at what I do, but where are my customers?"
                     </p>
