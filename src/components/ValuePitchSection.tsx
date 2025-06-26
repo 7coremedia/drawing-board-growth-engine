@@ -77,7 +77,7 @@ const ValuePitchSection = () => {
           </div>
           
           <div className="relative">
-            <div className="bg-white p-8 rounded-3xl shadow-xl h-full flex flex-col justify-center">
+            <div className="p-8 rounded-3xl  h-full flex flex-col justify-center bg-[#60ba60]">
               <div className="text-center">
                 <div className="text-6xl font-black text-primary mb-4">97%</div>
                 <p className="text-gray-600 mb-6 font-medium">Success Rate</p>
