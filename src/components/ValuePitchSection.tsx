@@ -13,9 +13,9 @@ const ValuePitchSection = () => {
           <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
+        <div className="w-full h-full object-cover rounded-3xl ">
           <div>
-            <div className="bg-primary text-white rounded-3xl px-[49px] py-[39px] mx-0 my-[26px] lg:min-h-[400px] flex flex-col justify-center">
+            <div className="bg-primary text-white rounded-3xl p-[40px] w-full h-full min-h-[420px] flex flex-col justify-center">
               <h3 className="text-3xl font-black mb-6">
                 It's called the <span className="text-accent font-black">7Flow Engine™</span>
               </h3>
@@ -39,7 +39,7 @@ const ValuePitchSection = () => {
             {/* Image with proper aspect ratio */}
             <div className="relative">
               <div className="aspect-[4/3] -bottom-1 rounded-3xl">
-                <img alt="Marketing system dashboard" src="/lovable-uploads/3562e7a0-1d70-46f0-8787-611240a579e4.png" className="w-full h-full object-cover rounded-3xl shadow-2xl lg:min-h-[400px]" />
+                <img alt="Marketing system dashboard" src="/lovable-uploads/3562e7a0-1d70-46f0-8787-611240a579e4.png" className="w-full h-full overflow-hidden rounded-3xl min-h-[420px]" />
                 
               </div>
             </div>
@@ -54,9 +54,9 @@ const ValuePitchSection = () => {
               </div>
             </div>
 
-            <div className="text-center bg-primary text-white p-10 rounded-2xl px-[40px] py-[40px]">
+            <div className="text-center bg-primary text-white p-10 px-[40px] rounded-3xl py-[34px]">
               <h4 className="text-2xl font-black mb-6">Ready to Get Started?</h4>
-              <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-black px-8 py-4 text-lg">
+              <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-black px-8 py-4 text-lg rounded-2xl">
                 Get My 7 Customers Now
               </Button>
             </div>
