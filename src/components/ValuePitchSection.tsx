@@ -1,24 +1,9 @@
-
 import { CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const ValuePitchSection = () => {
-  const features = [
-    "Content that actually converts",
-    "Messaging that commands attention", 
-    "Lead capture that's frictionless",
-    "Follow-ups that close",
-    "Strategy tailored to your audience's psychology"
-  ];
-
-  const backingPoints = [
-    "7Flow offer clarity",
-    "Our conversion DNA", 
-    "TDB aggressive, emotional, data-rich marketing style"
-  ];
-
-  return (
-    <section className="py-32 bg-white relative overflow-hidden">
+  const features = ["Content that actually converts", "Messaging that commands attention", "Lead capture that's frictionless", "Follow-ups that close", "Strategy tailored to your audience's psychology"];
+  const backingPoints = ["7Flow offer clarity", "Our conversion DNA", "TDB aggressive, emotional, data-rich marketing style"];
+  return <section className="py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24">
           <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
@@ -43,24 +28,18 @@ const ValuePitchSection = () => {
             </div>
 
             <div className="space-y-6 mb-10">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-6 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+              {features.map((feature, index) => <div key={index} className="flex items-center space-x-6 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
                   <CheckCircle className="text-primary flex-shrink-0" size={28} />
                   <span className="text-lg font-medium">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
           <div className="space-y-10">
             {/* Image with proper aspect ratio */}
             <div className="relative">
-              <div className="aspect-[4/3] w-full">
-                <img 
-                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
-                  alt="Marketing system dashboard"
-                  className="w-full h-full object-cover rounded-3xl shadow-2xl"
-                />
+              <div className="aspect-[4/3] -bottom-1 rounded-3xl">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Marketing system dashboard" className="w-full h-full object-cover rounded-3xl shadow-2xl" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-3xl"></div>
               </div>
             </div>
@@ -68,21 +47,16 @@ const ValuePitchSection = () => {
             <div className="bg-accent/20 p-10 rounded-2xl">
               <h4 className="text-2xl font-black text-primary mb-8">Backed by:</h4>
               <div className="space-y-6">
-                {backingPoints.map((point, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                {backingPoints.map((point, index) => <div key={index} className="flex items-start space-x-4">
                     <div className="w-4 h-4 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-lg font-medium">{point}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
             <div className="text-center bg-primary text-white p-10 rounded-2xl">
               <h4 className="text-2xl font-black mb-6">Ready to Get Started?</h4>
-              <Button 
-                size="lg"
-                className="bg-accent text-primary hover:bg-accent/90 font-black px-8 py-4 text-lg"
-              >
+              <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-black px-8 py-4 text-lg">
                 Get My 7 Customers Now
               </Button>
             </div>
@@ -114,8 +88,6 @@ const ValuePitchSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ValuePitchSection;
