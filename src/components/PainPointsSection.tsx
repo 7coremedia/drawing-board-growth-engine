@@ -79,7 +79,7 @@ const PainPointsSection = () => {
           <div className="lg:order-last">
             <div className="relative">
               <div className="aspect-[4/5] w-full">
-                <img alt="Business struggles" src="/lovable-uploads/77667891-1f4d-4a91-9418-ec08432d5629.png" className="w-full h-full rounded-3xl shadow-2xl object-cover" />
+                <img alt="Business struggles" src="/lovable-uploads/77667891-1f4d-4a91-9418-ec08432d5629.png" className="absolute top-0 left-0 w-full h-full object-cover scale-125 z-0 -translate-y- [80px]" />
                 
                 <div className="absolute bottom-8 left-8 right-8 text-center">
                   <div className="bg-white/20 backdrop-blur-sm p-8 py-[31px] px-[26px] mx-0 my-[2px] rounded-3xl">
