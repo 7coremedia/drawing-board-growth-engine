@@ -15,7 +15,7 @@ const ValuePitchSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
           <div>
-            <div className="bg-primary text-white p-10 rounded-3xl mb-10">
+            <div className="bg-primary text-white p-10 rounded-3xl mb-10 px-[49px] mx-0 my-[26px] py-[39px]">
               <h3 className="text-3xl font-black mb-6">
                 It's called the <span className="text-accent font-black">7Flow Engine™</span>
               </h3>
