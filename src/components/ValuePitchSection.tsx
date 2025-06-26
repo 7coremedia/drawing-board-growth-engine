@@ -13,9 +13,9 @@ const ValuePitchSection = () => {
           <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
+        <div className="w-full h-full object-cover rounded-3xl ">
           <div>
-            <div className="bg-primary text-white p-10 rounded-3xl mb-10 px-[49px] mx-0 my-[26px] py-[39px]">
+            <div className="bg-primary text-white rounded-3xl p-[40px] w-full h-full min-h-[420px] flex flex-col justify-center">
               <h3 className="text-3xl font-black mb-6">
                 It's called the <span className="text-accent font-black">7Flow Engine™</span>
               </h3>
@@ -39,7 +39,7 @@ const ValuePitchSection = () => {
             {/* Image with proper aspect ratio */}
             <div className="relative">
               <div className="aspect-[4/3] -bottom-1 rounded-3xl">
-                <img alt="Marketing system dashboard" className="w-full h-full rounded-3xl shadow-2xl object-cover" src="/lovable-uploads/3562e7a0-1d70-46f0-8787-611240a579e4.png" />
+                <img alt="Marketing system dashboard" src="/lovable-uploads/3562e7a0-1d70-46f0-8787-611240a579e4.png" className="w-full h-full overflow-hidden rounded-3xl min-h-[420px]" />
                 
               </div>
             </div>
