@@ -87,7 +87,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
               Struggling to Get{' '}
-              <span className="font-black text-lime-500">Clients?</span>
+              <span className="font-black text-[#e76817]">Clients?</span>
             </h1>
             <p className="text-2xl lg:text-4xl text-gray-600 mb-12 font-bold max-w-5xl mx-auto leading-relaxed">
               We help small businesses get{' '}
