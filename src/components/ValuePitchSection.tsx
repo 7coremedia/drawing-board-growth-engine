@@ -28,7 +28,7 @@ const ValuePitchSection = () => {
             </div>
 
             <div className="space-y-6 mb-10">
-              {features.map((feature, index) => <div key={index} className="flex items-center space-x-6 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+              {features.map((feature, index) => <div key={index} className="flex items-center space-x-6 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors py-[25px] px-[24px]">
                   <CheckCircle className="text-primary flex-shrink-0" size={28} />
                   <span className="text-lg font-medium">{feature}</span>
                 </div>)}
