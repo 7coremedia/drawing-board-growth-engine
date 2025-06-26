@@ -62,7 +62,7 @@ const PainPointsSection = () => {
             </div>
 
             <div className="max-w-2xl">
-              <div className="bg-accent/20 backdrop-blur-sm p-10 border border-accent/30 rounded-3xl py-[60px] px-[40px] my-0 mx-0">
+              <div className="bg-accent/20 backdrop-blur-sm p-10 border border-accent/30 rounded-3xl py-[70px] my-[58px] px-[49px] mx-[52px]">
                 <h3 className="text-3xl font-black mb-8 text-accent">Truth Bomb:</h3>
                 <div className="space-y-6 text-xl">
                   <p>Customers don't just show up. They follow systems.</p>
