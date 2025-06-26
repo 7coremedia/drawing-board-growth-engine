@@ -84,7 +84,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="hero-gradient tdb-pattern lg:py-32 py-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative w-screen min-h-[384px] overflow-hidden ">
           <div className="text-center mb-16">
             <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
               Struggling to Get{' '}
