@@ -94,7 +94,7 @@ const Index = () => {
               <span className="text-primary font-black">7 paying customers</span>{' '}
               a month. Or you don't pay.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20 bg-[#000a0e]/0 py-0 my-0 mx-[103px] rounded-3xl px-0">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20 py-0 my-0 rounded-3xl px-0 bg-[d5e185] bg-[#d5e185] mx-[220px]">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black px-10 py-6 text-xl" asChild>
                 <a href="#pricing" className="py-[24px] #d5e185">Start With This Plan</a>
               </Button>
