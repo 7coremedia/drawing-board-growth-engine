@@ -11,7 +11,6 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
-
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
@@ -109,7 +108,7 @@ const Index = () => {
           
           {/* Hero Image - Edge to Edge */}
           <div className="w-full mb-20">
-            <img alt="Business owner struggling with client acquisition" src="/lovable-uploads/be10801c-1d8f-4bf7-a5f0-292e36225987.png" className="w-screen h-96 h-min w-screen " />
+            <img alt="Business owner struggling with client acquisition" src="/lovable-uploads/be10801c-1d8f-4bf7-a5f0-292e36225987.png" className="w-screen h-96 h-min w-screen w-1/2 " />
           </div>
           
           {/* From Overlooked to Overbooked - Moved Further Down */}
@@ -221,5 +220,4 @@ const Index = () => {
       <Footer />
     </div>;
 };
-
 export default Index;
