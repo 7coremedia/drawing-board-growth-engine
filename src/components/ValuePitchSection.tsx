@@ -4,7 +4,7 @@ const ValuePitchSection = () => {
   const features = ["Content that actually converts", "Messaging that commands attention", "Lead capture that's frictionless", "Follow-ups that close", "Strategy tailored to your audience's psychology"];
   const backingPoints = ["7Flow offer clarity", "Our conversion DNA", "TDB aggressive, emotional, data-rich marketing style"];
   return <section className="py-32 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[30px]">
         <div className="text-center mb-24">
           <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
             We Built a System That Delivers<br />
