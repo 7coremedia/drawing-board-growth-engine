@@ -39,8 +39,8 @@ const ValuePitchSection = () => {
             {/* Image with proper aspect ratio */}
             <div className="relative">
               <div className="aspect-[4/3] -bottom-1 rounded-3xl">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Marketing system dashboard" className="w-full h-full object-cover rounded-3xl shadow-2xl" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-3xl"></div>
+                <img alt="Marketing system dashboard" className="w-full h-full rounded-3xl shadow-2xl object-cover" src="/lovable-uploads/3562e7a0-1d70-46f0-8787-611240a579e4.png" />
+                
               </div>
             </div>
 
