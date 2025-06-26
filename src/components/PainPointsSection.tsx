@@ -29,16 +29,7 @@ const PainPointsSection = () => {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary"></div>
-        <div className="absolute inset-0 opacity-100 bg-stone-950">
-          {[...Array(20)].map((_, i) => <div key={i} className="absolute bg-accent rounded-full animate-pulse" style={{
-          width: Math.random() * 4 + 2 + 'px',
-          height: Math.random() * 4 + 2 + 'px',
-          left: Math.random() * 100 + '%',
-          top: Math.random() * 100 + '%',
-          animationDelay: Math.random() * 3 + 's',
-          animationDuration: Math.random() * 2 + 3 + 's'
-        }} />)}
-        </div>
+        
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
