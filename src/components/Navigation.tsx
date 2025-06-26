@@ -49,7 +49,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-primary flex items-center justify-center mx-0 my-0 rounded-xl py-[18px] px-[20px]">
-              
+              <span className="font-satoshi text-[#d5e185] font-extrabold text-sm text-center">TDB</span>
             </div>
             <span className="font-satoshi text-xl text-[#143f26] text-left py-0 px-0 my-0 font-extrabold tracking-tighter mx-[9px] bg-lime-200 rounded-br-lg ">Hey, Business owner!</span>
           </Link>
