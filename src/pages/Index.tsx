@@ -83,53 +83,59 @@ const Index = () => {
   return <div className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="hero-gradient tdb-pattern py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
-              Struggling to Get{' '}
-              <span className="font-black text-[#e76817]">Clients?</span>
-            </h1>
-            <p className="text-2xl lg:text-4xl text-gray-600 mb-12 font-bold max-w-5xl mx-auto leading-relaxed">
-              We help small businesses get{' '}
-              <span className="text-primary font-black">7 paying customers</span>{' '}
-              a month. Or you don't pay.
-            </p>
-            
-            {/* Magnetic Button */}
-            <div className="flex justify-center mb-16">
-              <MagneticButton>
-                <button className="bg-[#2d4e39] hover:bg-[#234035] transition-colors px-10 text-lg text-[#d5e185] py-4 rounded-full font-bold">
-                  Start With This Plan
-                </button>
-              </MagneticButton>
+      {/* Hero Section with Full Width Background Image */}
+      <section className="relative py-20 lg:py-32 min-h-screen flex items-center" 
+               style={{
+                 backgroundImage: 'url(/lovable-uploads/be10801c-1d8f-4bf7-a5f0-292e36225987.png)',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center',
+                 backgroundRepeat: 'no-repeat'
+               }}>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-white">
+                Struggling to Get{' '}
+                <span className="font-black text-[#e76817]">Clients?</span>
+              </h1>
+              <p className="text-2xl lg:text-4xl text-white mb-12 font-bold max-w-5xl mx-auto leading-relaxed">
+                We help small businesses get{' '}
+                <span className="text-[#d5e185] font-black">7 paying customers</span>{' '}
+                a month. Or you don't pay.
+              </p>
+              
+              {/* Magnetic Button */}
+              <div className="flex justify-center mb-16">
+                <MagneticButton>
+                  <button className="bg-[#2d4e39] hover:bg-[#234035] transition-colors px-10 text-lg text-[#d5e185] py-4 rounded-full font-bold">
+                    Start With This Plan
+                  </button>
+                </MagneticButton>
+              </div>
             </div>
-          </div>
-          
-          {/* Hero Image - Edge to Edge */}
-          <div className="w-full mb-20">
-            <img alt="Business owner struggling with client acquisition" src="/lovable-uploads/be10801c-1d8f-4bf7-a5f0-292e36225987.png" className="w-screen h-96 h-min w-screen " />
-          </div>
-          
-          {/* From Overlooked to Overbooked - Moved Further Down */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-lg glow border border-gray-100 px-[33px] mx-0 my-0 py-[154px]">
-              <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-8 text-center">
-                From Overlooked to Overbooked
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-gray-600 text-lg mb-2">Average Client Results:</div>
-                  <div className="font-black text-primary text-2xl lg:text-3xl">+284% Growth</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-gray-600 text-lg mb-2">Success Rate:</div>
-                  <div className="font-black text-primary text-2xl lg:text-3xl">97%</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-gray-600 text-lg mb-2">Money-Back Guarantee:</div>
-                  <div className="font-black text-green-600 text-2xl lg:text-3xl">100%</div>
+            
+            {/* From Overlooked to Overbooked - Moved Further Down */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/90 backdrop-blur-sm p-10 rounded-3xl shadow-lg glow border border-gray-100">
+                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-8 text-center">
+                  From Overlooked to Overbooked
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <div className="text-gray-600 text-lg mb-2">Average Client Results:</div>
+                    <div className="font-black text-primary text-2xl lg:text-3xl">+284% Growth</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-gray-600 text-lg mb-2">Success Rate:</div>
+                    <div className="font-black text-primary text-2xl lg:text-3xl">97%</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-gray-600 text-lg mb-2">Money-Back Guarantee:</div>
+                    <div className="font-black text-green-600 text-2xl lg:text-3xl">100%</div>
+                  </div>
                 </div>
               </div>
             </div>
