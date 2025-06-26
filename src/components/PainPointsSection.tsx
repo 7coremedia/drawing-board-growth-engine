@@ -62,12 +62,12 @@ const PainPointsSection = () => {
             </div>
 
             <div className="bg-transparent border-none backdrop-blur-0">
-              <div className="bg-transparent border-none backdrop-blur-0">
-                <h3 className="text-3xl font-black mb-8 text-accent">Truth Bomb:</h3>
+              <div className="text-centerflex items-center justify-center h-screen bg-transparent border-none backdrop-blur-0 ">
+                <h3 className="text-3xl font-black mb-8 text-accent text-left py-0 px-0 mx-0 my-0">Truth Bomb:</h3>
                 <div className="space-y-6 text-xl">
-                  <p>Customers don't just show up. They follow systems.</p>
-                  <p>They follow signals.</p>
-                  <p className="font-black text-2xl">
+                  <p className="text-left">Customers don't just show up. They follow systems.</p>
+                  <p className="text-left px-0 py-0">They follow signals.</p>
+                  <p className="font-black text-2xl text-left">
                     And if your brand isn't sending the right signal at the right time — you'll be skipped.
                   </p>
                 </div>
