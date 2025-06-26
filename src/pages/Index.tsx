@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { MagneticButton } from '@/components/ui/magnetic-button';
+import { Case } from '@/components/ui/cases-with-infinite-scroll';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PricingTable from '@/components/PricingTable';
@@ -11,6 +12,7 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
+
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
@@ -85,7 +87,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="hero-gradient tdb-pattern lg:py-32 py-0">
         <div className="relative w-screen min-h-[384px] overflow-hidden ">
-          <div className="text-center mb-16 py-0">
+          <div className="text-center mb-16">
             <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
               Struggling to Get{' '}
               <span className="font-black text-[#e76817]">Clients?</span>
@@ -117,6 +119,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Cases Section - Added between hero and story */}
+      <Case />
 
       {/* Story Section */}
       <StorySection />
