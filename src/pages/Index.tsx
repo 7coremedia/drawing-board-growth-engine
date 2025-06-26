@@ -83,7 +83,7 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="hero-gradient tdb-pattern py-20 lg:py-32">
+      <section className="hero-gradient tdb-pattern lg:py-32 py-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
@@ -113,25 +113,7 @@ const Index = () => {
           
           {/* From Overlooked to Overbooked - Moved Further Down */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-lg glow border border-gray-100 px-[33px] mx-0 my-0 py-[154px]">
-              <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-8 text-center">
-                From Overlooked to Overbooked
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-gray-600 text-lg mb-2">Average Client Results:</div>
-                  <div className="font-black text-primary text-2xl lg:text-3xl">+284% Growth</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-gray-600 text-lg mb-2">Success Rate:</div>
-                  <div className="font-black text-primary text-2xl lg:text-3xl">97%</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-gray-600 text-lg mb-2">Money-Back Guarantee:</div>
-                  <div className="font-black text-green-600 text-2xl lg:text-3xl">100%</div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
