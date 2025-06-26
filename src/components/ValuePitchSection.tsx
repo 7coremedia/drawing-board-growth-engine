@@ -4,7 +4,7 @@ const ValuePitchSection = () => {
   const features = ["Content that actually converts", "Messaging that commands attention", "Lead capture that's frictionless", "Follow-ups that close", "Strategy tailored to your audience's psychology"];
   const backingPoints = ["7Flow offer clarity", "Our conversion DNA", "TDB aggressive, emotional, data-rich marketing style"];
   return <section className="py-32 bg-white relative overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[30px]">
         <div className="text-center mb-24">
           <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
             We Built a System That Delivers<br />
@@ -13,9 +13,9 @@ const ValuePitchSection = () => {
           <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
         </div>
 
-        <div className="w-full h-full object-cover rounded-3xl ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div className="bg-primary text-white rounded-3xl p-[40px] w-full h-full min-h-[420px] flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
+          <div>
+            <div className="bg-primary text-white p-10 rounded-3xl mb-10 px-[49px] mx-0 my-[26px] py-[39px]">
               <h3 className="text-3xl font-black mb-6">
                 It's called the <span className="text-accent font-black">7Flow Engine™</span>
               </h3>
@@ -39,7 +39,7 @@ const ValuePitchSection = () => {
             {/* Image with proper aspect ratio */}
             <div className="relative">
               <div className="aspect-[4/3] -bottom-1 rounded-3xl">
-                <img alt="Marketing system dashboard" src="/lovable-uploads/3562e7a0-1d70-46f0-8787-611240a579e4.png" className="w-full h-full overflow-hidden rounded-3xl min-h-[420px] object-none" />
+                <img alt="Marketing system dashboard" className="w-full h-full rounded-3xl shadow-2xl object-cover" src="/lovable-uploads/3562e7a0-1d70-46f0-8787-611240a579e4.png" />
                 
               </div>
             </div>
@@ -54,9 +54,9 @@ const ValuePitchSection = () => {
               </div>
             </div>
 
-            <div className="text-center bg-primary text-white p-10 px-[40px] rounded-3xl py-[34px]">
+            <div className="text-center bg-primary text-white p-10 rounded-2xl px-[40px] py-[40px]">
               <h4 className="text-2xl font-black mb-6">Ready to Get Started?</h4>
-              <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-black px-8 py-4 text-lg rounded-2xl">
+              <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-black px-8 py-4 text-lg">
                 Get My 7 Customers Now
               </Button>
             </div>
