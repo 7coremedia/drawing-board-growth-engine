@@ -53,9 +53,9 @@ const PainPointsSection = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-              {painPoints.map((point, index) => <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-xl hover:bg-white/15 transition-all duration-300 hover:scale-105" style={{
+              {painPoints.map((point, index) => <div key={index} style={{
               animationDelay: `${index * 100}ms`
-            }}>
+            }} className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:scale-105 px-[19px] py-[19px] rounded-3xl mx-0 my-0 ">
                   <point.icon className={`${point.color} mb-6`} size={40} />
                   <p className="text-lg font-medium leading-relaxed">{point.text}</p>
                 </div>)}
