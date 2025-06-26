@@ -99,9 +99,7 @@ const Index = () => {
                 <a href="#pricing" className="py-[24px] ">Start With This Plan</a>
               </Button>
               <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-black px-10 py-6 text-xl" asChild>
-                <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer" className="py-px">
-                  Chat on WhatsApp
-                </a>
+                
               </Button>
             </div>
           </div>
