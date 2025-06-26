@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { MagneticButton } from '@/components/ui/magnetic-button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PricingTable from '@/components/PricingTable';
@@ -10,6 +11,7 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
+
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
@@ -95,6 +97,14 @@ const Index = () => {
               a month. Or you don't pay.
             </p>
             
+            {/* Magnetic Button */}
+            <div className="flex justify-center mb-16">
+              <MagneticButton>
+                <button className="bg-[#2d4e39] hover:bg-[#234035] transition-colors px-10 text-lg text-[#d5e185] py-4 rounded-full font-bold">
+                  Start With This Plan
+                </button>
+              </MagneticButton>
+            </div>
           </div>
           
           {/* Hero Image - Edge to Edge */}
@@ -211,4 +221,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;
