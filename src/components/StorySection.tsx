@@ -21,7 +21,7 @@ const StorySection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
+          <h2 className="text-4xl mb-8 leading-tight lg:text-4xl text-zinc-950 text-center font-normal">
             One Thing Every Business Needs to Stay Alive
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
