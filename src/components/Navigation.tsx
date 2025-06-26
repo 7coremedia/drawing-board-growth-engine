@@ -26,7 +26,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-primary flex items-center justify-center mx-0 my-0 py-0 px-[14px] rounded-full">
               <span className="font-satoshi text-[#d5e185] font-extrabold text-sm text-center">TDB</span>
             </div>
             <span className="font-satoshi font-bold text-xl text-primary">TheDrawingBoard</span>
