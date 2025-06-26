@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { MagneticButton } from '@/components/ui/magnetic-button';
+import { Case } from '@/components/ui/cases-with-infinite-scroll';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PricingTable from '@/components/PricingTable';
@@ -11,6 +12,7 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
+
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
@@ -117,6 +119,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Cases Section - Added between hero and story */}
+      <Case />
 
       {/* Story Section */}
       <StorySection />
