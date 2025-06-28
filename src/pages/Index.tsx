@@ -110,7 +110,7 @@ const Index = () => {
           
           {/* Hero Image - Edge to Edge */}
           <div className="w-screen relative w-full h-full object-cover ">
-            <img alt="Business owner struggling with client acquisition" src="/lovable-uploads/1c077b17-f08b-43a5-a1d6-41d5b998ba47.png" className="w-full h-full object-cover " />
+            <img alt="Business owner struggling with client acquisition" className="w-full h-full object-cover " src="/lovable-uploads/aac2356b-358c-4113-a38d-4c5b91c4b5a5.png" />
           </div>
           
           {/* From Overlooked to Overbooked - Moved Further Down */}
