@@ -92,7 +92,7 @@ const Index = () => {
               Struggling to Get{' '}
               <span className="font-black text-lime-500">Clients?</span>
             </h1>
-            <p className="text-2xl lg:text-4xl text-gray-600 mb-12 font-bold max-w-5xl mx-auto leading-relaxed">
+            <p className="text-2xl lg:text-4xl text-gray-600 mb-12 max-w-5xl mx-auto leading-relaxed font-medium">
               We help small businesses get{' '}
               <span className="text-primary font-black">7 paying customers</span>{' '}
               a month. Or you don't pay.
