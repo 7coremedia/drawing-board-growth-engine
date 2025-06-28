@@ -1,4 +1,6 @@
+
 import { AlertTriangle, TrendingDown, Users, MessageSquare, Eye, Zap } from 'lucide-react';
+
 const PainPointsSection = () => {
   const painPoints = [{
     icon: MessageSquare,
@@ -25,10 +27,11 @@ const PainPointsSection = () => {
     text: "You feel stuck",
     color: "text-gray-500"
   }];
-  return <section className="py-32 bg-primary text-white relative overflow-hidden">
+
+  return (
+    <section className="py-32 bg-primary text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        
         
       </div>
 
@@ -44,16 +47,22 @@ const PainPointsSection = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-              {painPoints.map((point, index) => <div key={index} style={{
-              animationDelay: `${index * 100}ms`
-            }} className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:scale-105 px-[19px] py-[19px] rounded-3xl mx-0 my-0 ">
+              {painPoints.map((point, index) => (
+                <div 
+                  key={index} 
+                  style={{
+                    animationDelay: `${index * 100}ms`
+                  }} 
+                  className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:scale-105 px-[19px] py-[19px] rounded-3xl mx-0 my-0"
+                >
                   <point.icon className={`${point.color} mb-6`} size={40} />
                   <p className="text-lg font-medium leading-relaxed">{point.text}</p>
-                </div>)}
+                </div>
+              ))}
             </div>
 
             <div className="bg-transparent border-none backdrop-blur-0">
-              <div className="text-centerflex items-center justify-center h-screen bg-transparent border-none backdrop-blur-0 ">
+              <div className="text-centerflex items-center justify-center h-screen bg-transparent border-none backdrop-blur-0">
                 <h3 className="text-3xl font-black mb-8 text-accent text-left py-0 px-0 mx-0 my-0">Truth Bomb:</h3>
                 <div className="space-y-6 text-xl">
                   <p className="text-left">Customers don't just show up. They follow systems.</p>
@@ -70,7 +79,11 @@ const PainPointsSection = () => {
           <div className="lg:order-last">
             <div className="relative">
               <div className="aspect-[4/5] w-full">
-                <img alt="Business struggles" src="/lovable-uploads/77667891-1f4d-4a91-9418-ec08432d5629.png" className="absolute top-0 left-0 w-full h-full object-cover scale-125 z-0 -translate-y- [80px]" />
+                <img 
+                  alt="Business struggles" 
+                  src="/lovable-uploads/77667891-1f4d-4a91-9418-ec08432d5629.png" 
+                  className="absolute top-0 left-0 w-full h-full object-cover scale-125 z-0 -translate-y-[80px]" 
+                />
                 
                 <div className="absolute bottom-8 left-8 right-8 text-center">
                   <div className="bg-white/20 backdrop-blur-sm p-8 py-[31px] px-[26px] mx-0 my-[2px] rounded-3xl">
@@ -84,6 +97,8 @@ const PainPointsSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default PainPointsSection;
