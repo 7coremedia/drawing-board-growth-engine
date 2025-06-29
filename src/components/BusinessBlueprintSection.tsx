@@ -37,7 +37,7 @@ function BusinessBlueprintSection() {
           {/* Card 1 */}
           <Card className="overflow-hidden shadow-lg">
             <div className="relative">
-              <img alt="Business strategy" className="w-full h-48 object-cover" src="/lovable-uploads/b9a5ed6d-adb4-43d8-b1eb-f5aa96f40839.png" />
+              <img alt="Business strategy" src="/lovable-uploads/b9a5ed6d-adb4-43d8-b1eb-f5aa96f40839.png" className="h-60 left-2 w-full w-full right-0 object-cover right object-contain " />
               <div className="absolute top-4 left-4">
                 
               </div>
