@@ -82,12 +82,10 @@ function BusinessBlueprintSection() {
                 The methods used to scale any business to #1B in a year can be summarized in one word "ATTENTION". But attention can...
               </p>
               <div className="flex gap-56">
-                <Button variant="outline" size="sm" className="text-sm">
+                <Button variant="outline" size="sm" className="text-sm rounded-xl">
                   Read More
                 </Button>
-                <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white text-sm">
-                  Sign Up For $4
-                </Button>
+                <Button size="sm" className="text-sm rounded-xl bg-black text-[#bef418]">Save for later</Button>
               </div>
             </CardContent>
           </Card>
