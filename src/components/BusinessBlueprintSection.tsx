@@ -1,12 +1,9 @@
-
 import { Star } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
 function BusinessBlueprintSection() {
-  return (
-    <section className="bg-gray-100 rounded-t-3xl pt-16 pb-0">
+  return <section className="bg-gray-100 rounded-t-3xl pt-16 pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -26,9 +23,10 @@ function BusinessBlueprintSection() {
           {/* Star ratings */}
           <div className="flex justify-center items-center gap-2">
             <div className="flex">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="w-5 h-5" style={{ color: "#ffc81a", fill: "#ffc81a" }} />
-              ))}
+              {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-5 h-5" style={{
+              color: "#ffc81a",
+              fill: "#ffc81a"
+            }} />)}
             </div>
             <span className="text-sm text-gray-600">4.8 stars out of 3,367 reviews</span>
           </div>
@@ -39,20 +37,14 @@ function BusinessBlueprintSection() {
           {/* Card 1 */}
           <Card className="overflow-hidden shadow-lg">
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
-                alt="Business strategy"
-                className="w-full h-48 object-cover"
-              />
+              <img alt="Business strategy" className="w-full h-48 object-cover" src="/lovable-uploads/b9a5ed6d-adb4-43d8-b1eb-f5aa96f40839.png" />
               <div className="absolute top-4 left-4">
-                <span className="bg-black text-white px-3 py-1 rounded text-sm font-bold">
-                  The DrawingBoard
-                </span>
+                
               </div>
             </div>
             <CardContent className="p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
-                If You're Great at What You Do, <span className="bg-orange-500 text-white px-2 py-1">Why are Customers So Hard to Find?</span>
+                If You're Great at What You Do, <span className="500 text-white px-2 py-1 ">Why are Customers So Hard to Find?</span>
               </h3>
               <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                 <span>10k likes</span>
@@ -76,11 +68,7 @@ function BusinessBlueprintSection() {
           {/* Card 2 */}
           <Card className="overflow-hidden shadow-lg">
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
-                alt="Business growth"
-                className="w-full h-48 object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Business growth" className="w-full h-48 object-cover" />
               <div className="absolute top-4 left-4 flex items-center gap-2">
                 <span className="text-white text-2xl font-bold">#3</span>
                 <span className="text-white text-lg">3.8B</span>
@@ -115,10 +103,7 @@ function BusinessBlueprintSection() {
 
         {/* CTA Button */}
         <div className="text-center mb-16">
-          <Button 
-            size="lg" 
-            className="bg-black hover:bg-gray-800 text-yellow-400 rounded-full px-8 py-4 text-lg font-bold"
-          >
+          <Button size="lg" className="bg-black hover:bg-gray-800 text-yellow-400 rounded-full px-8 py-4 text-lg font-bold">
             I want 7 customers now ▶
           </Button>
         </div>
@@ -133,8 +118,6 @@ function BusinessBlueprintSection() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
-
 export default BusinessBlueprintSection;
