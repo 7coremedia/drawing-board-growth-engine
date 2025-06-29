@@ -81,7 +81,7 @@ function BusinessBlueprintSection() {
               <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
                 How to scale any "BUSINESS" to "#1B" in 360 Days (The-Drawing-Board)
               </h3>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 mx-[211px] my-[52px] py-px px-[11px] rounded-xl">
                 <span>5.5k likes</span>
                 <span>1k views</span>
                 <span>15 min ago</span>
