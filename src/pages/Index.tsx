@@ -16,9 +16,11 @@ import PricingRevealSection from '@/components/PricingRevealSection';
 import AnimatedHero from '@/components/ui/animated-hero';
 import BusinessLetter from '@/components/BusinessLetter';
 import BusinessBlueprintSection from '@/components/BusinessBlueprintSection';
+
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
+
   const engines = [{
     id: 'flow',
     title: 'The 7Flow Engine™',
@@ -108,7 +110,11 @@ const Index = () => {
       <Case />
 
       {/* Magic Text Section - Letter */}
-      
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MagicText text="Dear Business Owner, Running a business isn't just about the logo, your Instagram grid, or some motivational quote on your wall. It's about staying in business. That means one thing above all else: Customers. You can survive poor branding. You can survive bad ads. You might even survive a bad month. But the moment you run out of customers — it's game over. Rule #1 of Business: Don't go out of business. And yet every day, thousands of businesses shut their doors. Not because they're not talented. Not because they're not good at what they do. But because they couldn't get customers. You don't have to be one of them." />
+        </div>
+      </section>
 
       {/* Story Section */}
       <StorySection />
@@ -200,4 +206,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;

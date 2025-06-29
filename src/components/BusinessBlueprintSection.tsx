@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 function BusinessBlueprintSection() {
   return <section className="bg-gray-100 rounded-t-3xl pt-16 pb-0">
-      <div className="max-w-5xl mx-auto px- sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-6xl font-black mb-6">
