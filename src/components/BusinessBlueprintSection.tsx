@@ -54,7 +54,7 @@ function BusinessBlueprintSection() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Having a great product isn't enough. Learn the 3 psychological triggers that turn browsers into buyers.
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-56">
                 <Button variant="outline" size="sm" className="text-sm">
                   Read More
                 </Button>
