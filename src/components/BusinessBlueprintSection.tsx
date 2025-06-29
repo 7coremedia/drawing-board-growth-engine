@@ -64,12 +64,12 @@ function BusinessBlueprintSection() {
           </Card>
 
           {/* Card 2 */}
-          <Card className="overflow-hidden shadow-lg">
+          <Card className="overflow-hidden shadow-lg overflow-hidden shadow-lg rounded-3xl">
             <div className="relative">
               <img alt="Business growth" src="/lovable-uploads/7c2b4570-f61e-4d65-b6ce-0ba8cda305be.png" className="h-60 left-2 w-full w-full right-0 object-cover right object-contain " />
               
             </div>
-            <CardContent className="p-6">
+            <CardContent className="p-6 overflow-hidden shadow-lg rounded-3xl">
               <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
                 How to scale any "BUSINESS" to "#1B" in 360 Days (The-Drawing-Board)
               </h3>
