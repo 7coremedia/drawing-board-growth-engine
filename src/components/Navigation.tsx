@@ -60,7 +60,7 @@ const Navigation = () => {
                 {item.name}
               </Link>)}
             <Button asChild className="bg-primary hover:bg-primary/90 text-white font-semibold">
-              <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer" className="text-[#bebebe] bg-[#606060] px-[15px] rounded-2xl\n">I'm Not Ready
+              <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer" className="text-[#bebebe] bg-[#606060] px-[15px] rounded-2xl">I'm Not Ready
             </a>
             </Button>
           </div>
