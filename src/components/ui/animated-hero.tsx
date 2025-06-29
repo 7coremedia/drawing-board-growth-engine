@@ -1,69 +1,22 @@
 
-import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
 import { Send, Star } from "lucide-react";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 function AnimatedHero() {
-  const [titleNumber, setTitleNumber] = useState(0);
-  const titles = useMemo(
-    () => [
-      { word: "Clients?", color: "#8acf23" },
-      { word: "Customers?", color: "#ed6b18" },
-      { word: "Sales?", color: "#143f26" },
-      { word: "ROI?", color: "#5e318a" },
-      { word: "Visibility?", color: "#000000" },
-    ],
-    []
-  );
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (titleNumber === titles.length - 1) {
-        setTitleNumber(0);
-      } else {
-        setTitleNumber(titleNumber + 1);
-      }
-    }, 2000);
-    return () => clearTimeout(timeoutId);
-  }, [titleNumber, titles]);
-
   return (
     <div className="text-center mb-16">
-      <h1 className="text-7xl lg:text-9xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
-        <span>Struggling to Get</span>
-        <br />
-        <span className="relative inline-block h-[1.2em] w-full overflow-hidden mt-4">
-          {titles.map((title, index) => (
-            <motion.span
-              key={index}
-              className="absolute font-black left-1/2 top-0 transform -translate-x-1/2 w-full text-center"
-              style={{ color: title.color }}
-              initial={{ opacity: 0, y: 50 }}
-              transition={{ type: "spring", stiffness: 50, damping: 20 }}
-              animate={
-                titleNumber === index
-                  ? {
-                      y: 0,
-                      opacity: 1,
-                    }
-                  : {
-                      y: titleNumber > index ? -50 : 50,
-                      opacity: 0,
-                    }
-              }
-            >
-              {title.word}
-            </motion.span>
-          ))}
-        </span>
+      <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
+        <div className="flex flex-col items-center">
+          <span>Struggling to Get</span>
+          <span style={{ color: "#8acf23" }}>Customers?</span>
+        </div>
       </h1>
-      <p className="text-2xl lg:text-4xl text-gray-600 mb-12 max-w-5xl mx-auto leading-relaxed font-medium">
-        We help small businesses get{' '}
-        <span className="bg-[#8acf23] text-white px-2 py-1 font-black">7 paying customers</span>{' '}
-        a month. Or you don't pay.
+      <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
+        Growing a business is hard. We make it a whole lot easier,
+        <br />
+        more predictable, less stressful, and more fun.
       </p>
       
       {/* Email Signup */}
