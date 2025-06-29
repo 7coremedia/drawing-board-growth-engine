@@ -58,7 +58,7 @@ function BusinessBlueprintSection() {
                 <Button variant="outline" size="sm" className="text-sm rounded-xl">
                   Read More
                 </Button>
-                <Button size="sm" className="hover:bg-#143f26 -green-700 text-[bef418] bg-[143f26] text-[#bef418] bg-[#143f26] rounded-xl">Save for later</Button>
+                <Button size="sm" className="hover:bg-#143f26 -green-700 text-[bef418] bg-[143f26] text-[#bef418] rounded-xl bg-black">Save for later</Button>
               </div>
             </CardContent>
           </Card>
