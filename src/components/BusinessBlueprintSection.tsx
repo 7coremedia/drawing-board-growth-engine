@@ -105,7 +105,7 @@ function BusinessBlueprintSection() {
         {/* Trusted By Section */}
         <div className="text-center pb-16">
           <p className="text-gray-600 text-sm mb-8">TRUSTED BY</p>
-          <div className="flex justify-center items-center gap-8 opacity-60">
+          <div className="flex justify-center items-center gap-50 opacity-60 py-[52px] px-[50px] mx-0 my-0">
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Microsoft" className="h-8 grayscale" />
             <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Airbnb" className="h-8 grayscale" />
             <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Partner" className="h-8 grayscale" />
