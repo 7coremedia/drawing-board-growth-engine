@@ -97,7 +97,7 @@ function BusinessBlueprintSection() {
 
         {/* CTA Button */}
         <div className="text-center mb-16">
-          <Button size="lg" className="bg-black hover:bg-gray-800 px-8 py-4 font-bold text-[d2fd00] text-[#d2fd00] rounded-2xl">
+          <Button size="lg" className="px-8 py-4 font-bold text-[d2fd00] text-[#d2fd00] rounded-2xl bg-black">
             I want 7 customers now ▶
           </Button>
         </div>
