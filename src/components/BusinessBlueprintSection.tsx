@@ -8,7 +8,7 @@ function BusinessBlueprintSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-6xl font-black mb-6">
-            The <span className="bg-purple-600 text-white px-4 py-2 rounded-lg">Business Blueprint</span>
+            The <span className="bg-black-100 text-purple 400  px-0 py-0 text-6xl font-bold ">Business Blueprint</span>
           </h2>
           
           {/* Subtitle with toggle */}
