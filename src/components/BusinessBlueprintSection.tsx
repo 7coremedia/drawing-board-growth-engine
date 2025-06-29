@@ -68,14 +68,8 @@ function BusinessBlueprintSection() {
           {/* Card 2 */}
           <Card className="overflow-hidden shadow-lg">
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Business growth" className="w-full h-48 object-cover" />
-              <div className="absolute top-4 left-4 flex items-center gap-2">
-                <span className="text-white text-2xl font-bold">#3</span>
-                <span className="text-white text-lg">3.8B</span>
-                <span className="bg-white text-black px-2 py-1 rounded text-xs font-bold">
-                  BUSINESS DEVELOPMENT
-                </span>
-              </div>
+              <img alt="Business growth" src="/lovable-uploads/7c2b4570-f61e-4d65-b6ce-0ba8cda305be.png" className="h-60 left-2 w-full w-full right-2 object-cover" />
+              
             </div>
             <CardContent className="p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
