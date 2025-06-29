@@ -54,7 +54,7 @@ function BusinessBlueprintSection() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Having a great product isn't enough. Learn the 3 psychological triggers that turn browsers into buyers.
               </p>
-              <div className="flex gap-56">
+              <div className="flex gap-5">
                 <Button variant="outline" size="sm" className="text-sm rounded-xl">
                   Read More
                 </Button>
@@ -81,7 +81,7 @@ function BusinessBlueprintSection() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 The methods used to scale any business to #1B in a year can be summarized in one word "ATTENTION". But attention can...
               </p>
-              <div className="flex gap-56">
+              <div className="flex gap-5 py-0 my-0 mx-0 px-0">
                 <Button variant="outline" size="sm" className="text-sm rounded-xl">
                   Read More
                 </Button>
