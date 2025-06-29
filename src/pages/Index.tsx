@@ -15,6 +15,7 @@ import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
 import AnimatedHero from '@/components/ui/animated-hero';
 import BusinessLetter from '@/components/BusinessLetter';
+import BusinessBlueprintSection from '@/components/BusinessBlueprintSection';
 
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
@@ -120,6 +121,9 @@ const Index = () => {
 
       {/* Business Letter Section - Added after StorySection */}
       <BusinessLetter />
+
+      {/* Business Blueprint Section - New section */}
+      <BusinessBlueprintSection />
 
       {/* Pain Points Section */}
       <PainPointsSection />
