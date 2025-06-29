@@ -35,7 +35,7 @@ function BusinessBlueprintSection() {
         {/* Blog Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* Card 1 */}
-          <Card className="overflow-hidden shadow-lg rounded-3xl">
+          <Card className="overflow-hidden shadow-lg">
             <div className="relative">
               <img alt="Business strategy" src="/lovable-uploads/b9a5ed6d-adb4-43d8-b1eb-f5aa96f40839.png" className="h-60 left-2 w-full w-full right-0 object-cover right object-contain " />
               <div className="absolute top-4 left-4">
