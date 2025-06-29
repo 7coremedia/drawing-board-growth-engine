@@ -93,7 +93,7 @@ function BusinessBlueprintSection() {
 
         {/* CTA Button */}
         <div className="text-center mb-16">
-          <Button size="lg" className="px-8 py-4 font-bold text-[d2fd00] text-[#d2fd00] rounded-2xl bg-black">
+          <Button size="lg" className="relative inline-block absolute top-1.5 left-1.5 w-min h-full rounded-3xl border border-black bg-black z-0 relative z-10 bg-black text-[#d2fd00] font-bold px-8 py-4 rounded-2xl">
             I want 7 customers now ▶
           </Button>
         </div>
