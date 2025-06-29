@@ -13,9 +13,12 @@ import StorySection from '@/components/StorySection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ValuePitchSection from '@/components/ValuePitchSection';
 import PricingRevealSection from '@/components/PricingRevealSection';
+import AnimatedHero from '@/components/ui/animated-hero';
+
 const Index = () => {
   const [activeEngine, setActiveEngine] = useState<string | null>(null);
   const [expandedEngine, setExpandedEngine] = useState<string | null>(null);
+
   const engines = [{
     id: 'flow',
     title: 'The 7Flow Engine™',
@@ -87,32 +90,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="hero-gradient tdb-pattern lg:py-32 py-0">
         <div className="relative w-screen min-h-[384px] overflow-hidden ">
-          <div className="text-center mb-16">
-            <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
-              Struggling to Get{' '}
-              <span className="inline-block relative h-[1.5em] w-[200px] ml-2 align-middle">
-                <span className="absolute animate-wordloop text-[#8acf23]">Clients?</span>
-                <span className="absolute animate-wordloop-delay-1 text-[#ed6b18]">Customers?</span>
-                <span className="absolute animate-wordloop-delay-2 text-[#143f26]">Sales?</span>
-                <span className="absolute animate-wordloop-delay-3 text-[#5e318a]">ROI?</span>
-                <span className="absolute animate-wordloop-delay-4 text-black">Visibility?</span>
-              </span>
-            </h1>
-            <p className="text-2xl lg:text-4xl text-gray-600 mb-12 max-w-5xl mx-auto leading-relaxed font-medium">
-              We help small businesses get{' '}
-              <span className="text-primary font-black">7 paying customers</span>{' '}
-              a month. Or you don't pay.
-            </p>
-            
-            {/* Magnetic Button */}
-            <div className="flex justify-center mb-16">
-              <MagneticButton>
-                <button className="bg-[#2d4e39] hover:bg-[#234035] transition-colors px-10 text-lg text-[#d5e185] py-4 rounded-full font-bold">
-                  Start With This Plan
-                </button>
-              </MagneticButton>
-            </div>
-          </div>
+          <AnimatedHero />
           
           {/* Hero Image - Edge to Edge */}
           <div className="w-screen relative w-full h-full object-cover ">
@@ -220,4 +198,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;
