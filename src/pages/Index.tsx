@@ -90,7 +90,13 @@ const Index = () => {
           <div className="text-center mb-16">
             <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight text-zinc-950">
               Struggling to Get{' '}
-              <span className="font-black text-lime-500">Clients?</span>
+              <span className="inline-block relative h-[1.5em] w-[200px] ml-2 align-middle">
+                <span className="absolute animate-wordloop text-[#8acf23]">Clients?</span>
+                <span className="absolute animate-wordloop-delay-1 text-[#ed6b18]">Customers?</span>
+                <span className="absolute animate-wordloop-delay-2 text-[#143f26]">Sales?</span>
+                <span className="absolute animate-wordloop-delay-3 text-[#5e318a]">ROI?</span>
+                <span className="absolute animate-wordloop-delay-4 text-black">Visibility?</span>
+              </span>
             </h1>
             <p className="text-2xl lg:text-4xl text-gray-600 mb-12 max-w-5xl mx-auto leading-relaxed font-medium">
               We help small businesses get{' '}

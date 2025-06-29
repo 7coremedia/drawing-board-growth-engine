@@ -168,6 +168,20 @@
   }
 }
 
+/* Word Loop Animation */
+@keyframes wordloop {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10%, 30% {
+    opacity: 1;
+  }
+  40%, 100% {
+    opacity: 0;
+  }
+}
+
 /* Animation Classes */
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
@@ -187,6 +201,30 @@
 
 .animate-roll-down {
   animation: roll-down 0.8s ease-out forwards;
+}
+
+.animate-wordloop {
+  animation: wordloop 10s infinite;
+}
+
+.animate-wordloop-delay-1 {
+  animation: wordloop 10s infinite;
+  animation-delay: 2s;
+}
+
+.animate-wordloop-delay-2 {
+  animation: wordloop 10s infinite;
+  animation-delay: 4s;
+}
+
+.animate-wordloop-delay-3 {
+  animation: wordloop 10s infinite;
+  animation-delay: 6s;
+}
+
+.animate-wordloop-delay-4 {
+  animation: wordloop 10s infinite;
+  animation-delay: 8s;
 }
 
 /* Stagger animations */
