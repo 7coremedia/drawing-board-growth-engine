@@ -76,12 +76,12 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi Variable', 'Satoshi', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-black tracking-tight;
-    font-family: 'Satoshi', sans-serif;
+    @apply tracking-tight;
+    font-family: 'Satoshi Variable', 'Satoshi', sans-serif;
   }
 
   /* Hide scrollbar */

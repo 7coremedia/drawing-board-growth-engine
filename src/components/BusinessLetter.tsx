@@ -20,7 +20,7 @@ function BusinessLetter() {
           
           <div className="text-2xl text-gray-800 leading-relaxed space-y-6">
             <p>
-              Running a business can be fucking hard, we know, but it doesn't have to be.
+              Running a business can be fuc#ing hard, we know, but it doesn't have to be.
             </p>
             
             <p>

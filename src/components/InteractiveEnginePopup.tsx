@@ -1,17 +1,68 @@
-
 import { useState, useEffect } from 'react';
-import { X, ArrowDown } from 'lucide-react';
+import { X, ArrowDown, Check, ChevronRight, Play, Target, BarChart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Progress } from '@/components/ui/progress';
+
+interface StepIndicator {
+  label: string;
+  isCompleted: boolean;
+  isCurrent: boolean;
+}
+
+interface FormData {
+  overview: {
+    price: string;
+    discountEnabled: boolean;
+    discountAmount: string;
+  };
+  details: {
+    [key: string]: string;
+  };
+}
+
+interface EngineStep {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  benefits: string[];
+}
+
+interface EngineOutcome {
+  metric: string;
+  value: string;
+  trend: string;
+}
 
 interface EngineData {
   id: string;
   title: string;
   icon: string;
   description: string;
-  content: {
-    headline: string;
-    details: string[];
-    cta: string;
+  steps: {
+    overview: {
+      title: string;
+      price: string;
+      discount?: {
+        isEnabled: boolean;
+        amount: string;
+      };
+    };
+    details: {
+      title: string;
+      fields: {
+        label: string;
+        type: string;
+        value: string;
+      }[];
+    };
+    confirmation: {
+      title: string;
+      summary: {
+        label: string;
+        value: string;
+      }[];
+    };
   };
 }
 
@@ -33,9 +84,40 @@ const InteractiveEnginePopup = ({
   onCloseExpanded 
 }: InteractiveEnginePopupProps) => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [formData, setFormData] = useState<FormData>({
+    overview: {
+      price: "",
+      discountEnabled: false,
+      discountAmount: ""
+    },
+    details: {}
+  });
+
+  const steps: StepIndicator[] = [
+    { label: "Overview", isCompleted: currentStep > 0, isCurrent: currentStep === 0 },
+    { label: "Details", isCompleted: currentStep > 1, isCurrent: currentStep === 1 },
+    { label: "Confirmation", isCompleted: currentStep > 2, isCurrent: currentStep === 2 }
+  ];
 
   useEffect(() => {
     if (!expandedEngine) return;
+
+    const engine = engines.find(e => e.id === expandedEngine);
+    if (!engine) return;
+
+    // Initialize form data when engine is selected
+    setFormData({
+      overview: {
+        price: engine.steps.overview.price,
+        discountEnabled: engine.steps.overview.discount?.isEnabled || false,
+        discountAmount: engine.steps.overview.discount?.amount || ""
+      },
+      details: engine.steps.details.fields.reduce((acc, field) => ({
+        ...acc,
+        [field.label]: field.value
+      }), {})
+    });
 
     const handleScroll = () => {
       const popup = document.getElementById('expanded-popup');
@@ -50,154 +132,280 @@ const InteractiveEnginePopup = ({
     const popup = document.getElementById('expanded-popup');
     popup?.addEventListener('scroll', handleScroll);
     return () => popup?.removeEventListener('scroll', handleScroll);
-  }, [expandedEngine]);
+  }, [expandedEngine, engines]);
 
-  const getEngineContent = (id: string) => {
-    switch (id) {
-      case 'flow':
-        return {
-          headline: "The 7Flow Engine™ - Your Customer Acquisition Machine",
-          details: [
-            "Content that actually converts and commands attention in crowded feeds",
-            "Lead capture systems that feel frictionless but capture everything",
-            "Follow-up sequences that close deals while you sleep",
-            "Psychology-based messaging that triggers buying decisions",
-            "7 qualified customers delivered every 30 days, guaranteed"
-          ],
-          cta: "Get Your 7 Customers Free"
-        };
-      case 'godfather':
-        return {
-          headline: "The Godfather Offer System™ - Offers They Can't Refuse",
-          details: [
-            "Create irresistible offers that make competitors look amateur",
-            "Psychological triggers that bypass price objections completely",
-            "Value stacking that makes saying 'no' feel impossible",
-            "Risk reversal strategies that eliminate buyer hesitation",
-            "Offer positioning that has customers begging to buy"
-          ],
-          cta: "Build My Godfather Offer"
-        };
-      case 'magnet':
-        return {
-          headline: "The Client Magnet Blueprint™ - 24/7 Customer Attraction",
-          details: [
-            "Turn your business into a customer attraction machine",
-            "Reputation systems that build trust before you even speak",
-            "Referral engines that create exponential growth",
-            "Retention strategies that turn customers into evangelists",
-            "Positioning that makes you the obvious choice in your market"
-          ],
-          cta: "Activate My Client Magnet"
-        };
-      case 'growth':
-        return {
-          headline: "TDB Growth Engine™ - Scale Beyond Your Wildest Dreams",
-          details: [
-            "Proven frameworks that scale from struggling to thriving",
-            "Systems that work while you focus on what you love",
-            "Growth strategies tailored to your specific industry",
-            "Revenue optimization that maximizes every customer",
-            "Business transformation that creates lasting success"
-          ],
-          cta: "Ignite My Growth Engine"
-        };
-      default:
-        return { headline: "", details: [], cta: "" };
+  const handleNext = () => {
+    if (currentStep < steps.length - 1) {
+      setCurrentStep(currentStep + 1);
     }
   };
 
+  const handleBack = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
+  const handleInputChange = (section: keyof FormData, field: string, value: string | boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      [section]: {
+        ...prev[section],
+        [field]: value
+      }
+    }));
+  };
+
   if (expandedEngine) {
-    const content = getEngineContent(expandedEngine);
+    const engine = engines.find(e => e.id === expandedEngine);
+    if (!engine) return null;
+
     return (
-      <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm">
-        <div 
-          id="expanded-popup"
-          className="h-full overflow-y-auto scrollbar-hide"
-          style={{
-            background: `linear-gradient(135deg, 
-              hsl(var(--primary)) 0%, 
-              hsl(var(--primary) / 0.9) 50%, 
-              hsl(var(--accent) / 0.1) 100%)`
-          }}
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center"
         >
-          {/* Progress Bar */}
-          <div className="fixed top-0 left-0 right-0 h-1 bg-white/20 z-50">
-            <div 
-              className="h-full bg-accent transition-all duration-300"
-              style={{ width: `${scrollProgress * 100}%` }}
-            />
-          </div>
-
-          {/* Close Button */}
-          <button
-            onClick={onCloseExpanded}
-            className="fixed top-6 right-6 z-50 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            className="bg-white rounded-xl shadow-2xl w-full max-w-xl mx-4 overflow-hidden"
           >
-            <X size={24} />
-          </button>
+            {/* Header with close button */}
+            <div className="relative border-b border-gray-100 p-6">
+              <button
+                onClick={onCloseExpanded}
+                className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X size={24} />
+              </button>
+              <h2 className="text-2xl font-satoshi font-bold text-gray-900">
+                Let's configure your {engine.title}
+              </h2>
+            </div>
 
-          <div className="min-h-screen px-6 py-20">
-            <div className="max-w-4xl mx-auto text-white">
-              {/* Hero Section */}
-              <div className="text-center mb-16 animate-fade-in">
-                <div className="text-8xl mb-8">
-                  {engines.find(e => e.id === expandedEngine)?.icon}
-                </div>
-                <h1 className="text-5xl lg:text-7xl font-satoshi font-bold mb-8 leading-tight">
-                  {content.headline}
-                </h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
-              </div>
-
-              {/* Content Sections */}
-              <div className="space-y-16 mb-20">
-                {content.details.map((detail, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-500"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <div className="flex items-start space-x-6">
-                      <div className="bg-accent text-primary w-12 h-12 rounded-full flex items-center justify-center font-satoshi font-bold text-xl">
-                        {index + 1}
+            {/* Progress Steps */}
+            <div className="px-6 pt-6">
+              <div className="flex justify-between items-center">
+                {steps.map((step, index) => (
+                  <div key={step.label} className="flex items-center">
+                    {/* Connector line */}
+                    {index > 0 && (
+                      <div 
+                        className={`h-[2px] w-full -mx-2 ${
+                          step.isCompleted || step.isCurrent 
+                            ? 'bg-primary' 
+                            : 'bg-gray-200'
+                        }`}
+                      />
+                    )}
+                    {/* Step indicator */}
+                    <div className="flex flex-col items-center gap-2">
+                      <div 
+                        className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
+                          step.isCompleted 
+                            ? 'border-primary bg-primary text-white'
+                            : step.isCurrent
+                              ? 'border-primary text-primary'
+                              : 'border-gray-200 text-gray-400'
+                        }`}
+                      >
+                        {step.isCompleted ? (
+                          <Check size={16} />
+                        ) : (
+                          <span>{index + 1}</span>
+                        )}
                       </div>
-                      <p className="text-xl leading-relaxed flex-1">
-                        {detail}
-                      </p>
+                      <span 
+                        className={`text-sm ${
+                          step.isCurrent 
+                            ? 'text-primary font-medium' 
+                            : 'text-gray-500'
+                        }`}
+                      >
+                        {step.label}
+                      </span>
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* CTA Section */}
-              <div className="text-center bg-accent/20 backdrop-blur-sm rounded-3xl p-12">
-                <h3 className="text-3xl font-satoshi font-bold mb-6">
-                  Ready to Transform Your Business?
-                </h3>
-                <Button 
-                  size="lg"
-                  className="bg-accent text-primary hover:bg-accent/90 font-satoshi font-bold px-12 py-6 text-xl rounded-full"
-                >
-                  {content.cta}
-                </Button>
-              </div>
-
-              {/* Scroll Indicator */}
-              <div className="text-center mt-16">
-                <ArrowDown className="animate-bounce mx-auto text-accent" size={32} />
-                <p className="text-accent mt-4">Scroll to explore more</p>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
+
+            {/* Content Area */}
+            <div className="p-6 space-y-6">
+              {currentStep === 0 && (
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700">
+                      Please provide your RRP
+                    </label>
+                    <div className="relative">
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                      <input
+                        type="text"
+                        value={formData.overview.price}
+                        onChange={(e) => handleInputChange('overview', 'price', e.target.value)}
+                        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="text-sm font-medium text-gray-700">
+                      Do you wish to offer a discount?
+                    </label>
+                    <div className="flex gap-4">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="radio" 
+                          name="discount" 
+                          checked={formData.overview.discountEnabled}
+                          onChange={() => handleInputChange('overview', 'discountEnabled', true)}
+                          className="w-4 h-4 text-primary border-gray-300 focus:ring-primary/20" 
+                        />
+                        <span className="text-gray-700">Yes</span>
+                      </label>
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="radio" 
+                          name="discount" 
+                          checked={!formData.overview.discountEnabled}
+                          onChange={() => handleInputChange('overview', 'discountEnabled', false)}
+                          className="w-4 h-4 text-primary border-gray-300 focus:ring-primary/20" 
+                        />
+                        <span className="text-gray-700">Not now</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {formData.overview.discountEnabled && (
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-gray-700">
+                        Please provide your desired discount amount
+                      </label>
+                      <div className="flex items-center gap-4">
+                        <div className="relative flex-1">
+                          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                          <input
+                            type="text"
+                            value={formData.overview.discountAmount}
+                            onChange={(e) => handleInputChange('overview', 'discountAmount', e.target.value)}
+                            className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                          />
+                        </div>
+                        {formData.overview.discountAmount && (
+                          <span className="text-sm font-medium text-green-600">
+                            ${formData.overview.discountAmount} Discount
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {currentStep === 1 && (
+                <div className="space-y-6">
+                  {engine.steps.details.fields.map((field, index) => (
+                    <div key={index} className="space-y-2">
+                      <label className="text-sm font-medium text-gray-700">
+                        {field.label}
+                      </label>
+                      {field.type === 'text' && (
+                        <input
+                          type="text"
+                          value={formData.details[field.label] || ''}
+                          onChange={(e) => handleInputChange('details', field.label, e.target.value)}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                          placeholder={`Enter ${field.label.toLowerCase()}`}
+                        />
+                      )}
+                      {field.type === 'number' && (
+                        <div className="relative">
+                          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                          <input
+                            type="text"
+                            value={formData.details[field.label] || ''}
+                            onChange={(e) => handleInputChange('details', field.label, e.target.value)}
+                            className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                            placeholder="0.00"
+                          />
+                        </div>
+                      )}
+                      {field.type === 'select' && (
+                        <select 
+                          value={formData.details[field.label] || ''}
+                          onChange={(e) => handleInputChange('details', field.label, e.target.value)}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                        >
+                          <option value="">Select {field.label.toLowerCase()}</option>
+                          <option value="small">Small</option>
+                          <option value="medium">Medium</option>
+                          <option value="large">Large</option>
+                        </select>
+                      )}
+                      {field.type === 'textarea' && (
+                        <textarea
+                          value={formData.details[field.label] || ''}
+                          onChange={(e) => handleInputChange('details', field.label, e.target.value)}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary min-h-[100px]"
+                          placeholder={`Enter ${field.label.toLowerCase()}`}
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {currentStep === 2 && (
+                <div className="space-y-6">
+                  <div className="bg-gray-50 rounded-lg p-6 space-y-4">
+                    {engine.steps.confirmation.summary.map((item, index) => (
+                      <div key={index} className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600">{item.label}</span>
+                        <span className="text-sm font-medium text-gray-900">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="p-4 bg-green-50 border border-green-100 rounded-lg">
+                    <p className="text-sm text-green-800">
+                      Your configuration is ready! Click continue to proceed with the setup.
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Footer with buttons */}
+            <div className="border-t border-gray-100 p-6 flex justify-between">
+              <Button
+                variant="outline"
+                onClick={handleBack}
+                disabled={currentStep === 0}
+                className="px-6"
+              >
+                Back
+              </Button>
+              <Button
+                onClick={currentStep === steps.length - 1 ? onCloseExpanded : handleNext}
+                className="px-6"
+              >
+                {currentStep === steps.length - 1 ? 'Complete Setup' : 'Continue'}
+              </Button>
+            </div>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
     );
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {engines.map((engine, index) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
+      {engines.map((engine) => (
         <div
           key={engine.id}
           className={`relative overflow-hidden cursor-pointer transition-all duration-700 ${
@@ -211,10 +419,9 @@ const InteractiveEnginePopup = ({
           onMouseLeave={() => onEngineHover(null)}
           onClick={() => onEngineClick(engine.id)}
         >
-          {/* Base Card */}
-          <div className={`bg-white rounded-2xl p-8 shadow-lg border-2 transition-all duration-500 ${
+          <div className={`bg-white rounded-[32px] p-8 border-2 transition-all duration-500 ${
             activeEngine === engine.id 
-              ? 'border-primary shadow-2xl' 
+              ? 'border-primary' 
               : 'border-gray-100 hover:border-primary/30'
           }`}>
             <div className="text-4xl mb-4">{engine.icon}</div>
@@ -223,33 +430,6 @@ const InteractiveEnginePopup = ({
             </h3>
             <p className="text-gray-600">{engine.description}</p>
           </div>
-
-          {/* Hover Popup */}
-          {activeEngine === engine.id && (
-            <div className="absolute inset-0 bg-primary text-white rounded-2xl p-8 animate-scale-in shadow-2xl border-2 border-accent">
-              <div className="text-4xl mb-4">{engine.icon}</div>
-              <h3 className="text-xl font-satoshi font-bold mb-4">
-                {engine.title}
-              </h3>
-              <div className="space-y-3 mb-6">
-                {getEngineContent(engine.id).details.slice(0, 3).map((detail, i) => (
-                  <div key={i} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-sm">{detail}</p>
-                  </div>
-                ))}
-              </div>
-              <Button 
-                size="sm"
-                className="bg-accent text-primary hover:bg-accent/90 font-satoshi font-semibold w-full"
-              >
-                Learn More
-              </Button>
-              <p className="text-xs text-center mt-3 text-accent">
-                Click to expand • Scroll to explore
-              </p>
-            </div>
-          )}
         </div>
       ))}
     </div>
